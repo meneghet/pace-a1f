@@ -1,0 +1,221 @@
+match_id,date,giornata,team,opponent,is_home,team_score,opp_score,result,n_periods,team_pace,opp_pace,game_pace
+53336,04/10/2025,1,Famila Wuber Schio,People Strategy Roseto,True,76,52,W,4,75.0,71.7,73.3
+53336,04/10/2025,1,People Strategy Roseto,Famila Wuber Schio,False,52,76,L,4,71.7,75.0,73.3
+53337,04/10/2025,1,Umana Reyer Venezia,O.ME.P.S. Battipaglia,True,74,50,W,4,79.7,80.8,80.2
+53337,04/10/2025,1,O.ME.P.S. Battipaglia,Umana Reyer Venezia,False,50,74,L,4,80.8,79.7,80.2
+53338,05/10/2025,1,Geas Sesto San Giovanni,Autosped G Castelnuovo Scrivia,True,65,56,W,4,72.2,69.3,70.8
+53338,05/10/2025,1,Autosped G Castelnuovo Scrivia,Geas Sesto San Giovanni,False,56,65,L,4,69.3,72.2,70.8
+53339,04/10/2025,1,Dinamo Banco di Sardegna Sassari,Alama San Martino di Lupari,True,76,64,W,4,76.5,77.2,76.8
+53339,04/10/2025,1,Alama San Martino di Lupari,Dinamo Banco di Sardegna Sassari,False,64,76,L,4,77.2,76.5,76.8
+53340,05/10/2025,1,RMB Brixia Basket San Paolo,La Molisana Magnolia Campobasso,True,37,87,L,4,77.5,77.2,77.3
+53340,05/10/2025,1,La Molisana Magnolia Campobasso,RMB Brixia Basket San Paolo,False,87,37,W,4,77.2,77.5,77.3
+53341,12/10/2025,2,La Molisana Magnolia Campobasso,Umana Reyer Venezia,True,79,84,L,4,70.0,71.5,70.8
+53341,12/10/2025,2,Umana Reyer Venezia,La Molisana Magnolia Campobasso,False,84,79,W,4,71.5,70.0,70.8
+53342,12/10/2025,2,People Strategy Roseto,Geas Sesto San Giovanni,True,71,64,W,4,73.7,74.0,73.8
+53342,12/10/2025,2,Geas Sesto San Giovanni,People Strategy Roseto,False,64,71,L,4,74.0,73.7,73.8
+53343,12/10/2025,2,O.ME.P.S. Battipaglia,Logiman Broni,True,63,78,L,4,66.8,65.6,66.2
+53343,12/10/2025,2,Logiman Broni,O.ME.P.S. Battipaglia,False,78,63,W,4,65.6,66.8,66.2
+53344,11/10/2025,2,Autosped G Castelnuovo Scrivia,Dinamo Banco di Sardegna Sassari,True,69,73,L,4,71.3,72.2,71.8
+53344,11/10/2025,2,Dinamo Banco di Sardegna Sassari,Autosped G Castelnuovo Scrivia,False,73,69,W,4,72.2,71.3,71.8
+53345,12/10/2025,2,Alama San Martino di Lupari,Famila Wuber Schio,True,58,77,L,4,69.8,70.4,70.1
+53345,12/10/2025,2,Famila Wuber Schio,Alama San Martino di Lupari,False,77,58,W,4,70.4,69.8,70.1
+53346,19/10/2025,3,Logiman Broni,Famila Wuber Schio,True,44,87,L,4,60.0,73.7,66.8
+53346,19/10/2025,3,Famila Wuber Schio,Logiman Broni,False,87,44,W,4,73.7,60.0,66.8
+53347,19/10/2025,3,RMB Brixia Basket San Paolo,Dinamo Banco di Sardegna Sassari,True,65,81,L,4,76.8,75.9,76.3
+53347,19/10/2025,3,Dinamo Banco di Sardegna Sassari,RMB Brixia Basket San Paolo,False,81,65,W,4,75.9,76.8,76.3
+53348,19/10/2025,3,Umana Reyer Venezia,People Strategy Roseto,True,95,73,W,4,82.1,81.2,81.7
+53348,19/10/2025,3,People Strategy Roseto,Umana Reyer Venezia,False,73,95,L,4,81.2,82.1,81.7
+53349,19/10/2025,3,La Molisana Magnolia Campobasso,Autosped G Castelnuovo Scrivia,True,61,57,W,4,70.4,71.9,71.2
+53349,19/10/2025,3,Autosped G Castelnuovo Scrivia,La Molisana Magnolia Campobasso,False,57,61,L,4,71.9,70.4,71.2
+53350,19/10/2025,3,O.ME.P.S. Battipaglia,Alama San Martino di Lupari,True,65,71,L,4,70.6,74.3,72.4
+53350,19/10/2025,3,Alama San Martino di Lupari,O.ME.P.S. Battipaglia,False,71,65,W,4,74.3,70.6,72.4
+53351,26/10/2025,4,Autosped G Castelnuovo Scrivia,Umana Reyer Venezia,True,57,72,L,4,77.2,78.4,77.8
+53351,26/10/2025,4,Umana Reyer Venezia,Autosped G Castelnuovo Scrivia,False,72,57,W,4,78.4,77.2,77.8
+53352,25/10/2025,4,Famila Wuber Schio,RMB Brixia Basket San Paolo,True,89,39,W,4,76.4,79.7,78.1
+53352,25/10/2025,4,RMB Brixia Basket San Paolo,Famila Wuber Schio,False,39,89,L,4,79.7,76.4,78.1
+53353,26/10/2025,4,Dinamo Banco di Sardegna Sassari,Logiman Broni,True,71,76,L,5,75.0,72.5,73.8
+53353,26/10/2025,4,Logiman Broni,Dinamo Banco di Sardegna Sassari,False,76,71,W,5,72.5,75.0,73.8
+53354,26/10/2025,4,Geas Sesto San Giovanni,O.ME.P.S. Battipaglia,True,66,45,W,4,71.7,70.0,70.8
+53354,26/10/2025,4,O.ME.P.S. Battipaglia,Geas Sesto San Giovanni,False,45,66,L,4,70.0,71.7,70.8
+53355,26/10/2025,4,Alama San Martino di Lupari,La Molisana Magnolia Campobasso,True,49,68,L,4,69.4,70.4,69.9
+53355,26/10/2025,4,La Molisana Magnolia Campobasso,Alama San Martino di Lupari,False,68,49,W,4,70.4,69.4,69.9
+53356,01/11/2025,5,La Molisana Magnolia Campobasso,Famila Wuber Schio,True,70,76,L,4,70.1,71.9,71.0
+53356,01/11/2025,5,Famila Wuber Schio,La Molisana Magnolia Campobasso,False,76,70,W,4,71.9,70.1,71.0
+53357,02/11/2025,5,Logiman Broni,People Strategy Roseto,True,82,71,W,4,69.9,70.5,70.2
+53357,02/11/2025,5,People Strategy Roseto,Logiman Broni,False,71,82,L,4,70.5,69.9,70.2
+53358,01/11/2025,5,Umana Reyer Venezia,Dinamo Banco di Sardegna Sassari,True,86,44,W,4,78.7,79.5,79.1
+53358,01/11/2025,5,Dinamo Banco di Sardegna Sassari,Umana Reyer Venezia,False,44,86,L,4,79.5,78.7,79.1
+53359,02/11/2025,5,O.ME.P.S. Battipaglia,Autosped G Castelnuovo Scrivia,True,83,85,L,4,80.9,81.5,81.2
+53359,02/11/2025,5,Autosped G Castelnuovo Scrivia,O.ME.P.S. Battipaglia,False,85,83,W,4,81.5,80.9,81.2
+53360,02/11/2025,5,RMB Brixia Basket San Paolo,Geas Sesto San Giovanni,True,60,79,L,4,69.7,68.8,69.2
+53360,02/11/2025,5,Geas Sesto San Giovanni,RMB Brixia Basket San Paolo,False,79,60,W,4,68.8,69.7,69.2
+53361,08/11/2025,6,Geas Sesto San Giovanni,Logiman Broni,True,76,58,W,4,65.0,64.0,64.5
+53361,08/11/2025,6,Logiman Broni,Geas Sesto San Giovanni,False,58,76,L,4,64.0,65.0,64.5
+53362,08/11/2025,6,Dinamo Banco di Sardegna Sassari,La Molisana Magnolia Campobasso,True,68,76,L,4,64.9,65.0,65.0
+53362,08/11/2025,6,La Molisana Magnolia Campobasso,Dinamo Banco di Sardegna Sassari,False,76,68,W,4,65.0,64.9,65.0
+53363,08/11/2025,6,People Strategy Roseto,O.ME.P.S. Battipaglia,True,68,70,L,4,73.8,74.8,74.3
+53363,08/11/2025,6,O.ME.P.S. Battipaglia,People Strategy Roseto,False,70,68,W,4,74.8,73.8,74.3
+53364,08/11/2025,6,Alama San Martino di Lupari,RMB Brixia Basket San Paolo,True,62,60,W,4,76.2,76.3,76.2
+53364,08/11/2025,6,RMB Brixia Basket San Paolo,Alama San Martino di Lupari,False,60,62,L,4,76.3,76.2,76.2
+53365,08/11/2025,6,Famila Wuber Schio,Umana Reyer Venezia,True,68,54,W,4,70.5,71.7,71.1
+53365,08/11/2025,6,Umana Reyer Venezia,Famila Wuber Schio,False,54,68,L,4,71.7,70.5,71.1
+53366,22/11/2025,7,La Molisana Magnolia Campobasso,People Strategy Roseto,True,69,49,W,4,68.8,68.1,68.4
+53366,22/11/2025,7,People Strategy Roseto,La Molisana Magnolia Campobasso,False,49,69,L,4,68.1,68.8,68.4
+53367,23/11/2025,7,Umana Reyer Venezia,Geas Sesto San Giovanni,True,71,58,W,4,72.2,72.2,72.2
+53367,23/11/2025,7,Geas Sesto San Giovanni,Umana Reyer Venezia,False,58,71,L,4,72.2,72.2,72.2
+53368,23/11/2025,7,Alama San Martino di Lupari,Autosped G Castelnuovo Scrivia,True,84,91,L,4,73.5,73.7,73.6
+53368,23/11/2025,7,Autosped G Castelnuovo Scrivia,Alama San Martino di Lupari,False,91,84,W,4,73.7,73.5,73.6
+53369,23/11/2025,7,RMB Brixia Basket San Paolo,Logiman Broni,True,87,63,W,4,73.6,72.6,73.1
+53369,23/11/2025,7,Logiman Broni,RMB Brixia Basket San Paolo,False,63,87,L,4,72.6,73.6,73.1
+53370,23/11/2025,7,Famila Wuber Schio,Dinamo Banco di Sardegna Sassari,True,94,51,W,4,69.8,71.6,70.7
+53370,23/11/2025,7,Dinamo Banco di Sardegna Sassari,Famila Wuber Schio,False,51,94,L,4,71.6,69.8,70.7
+53371,30/11/2025,8,Logiman Broni,La Molisana Magnolia Campobasso,True,68,72,L,5,65.0,65.0,65.0
+53371,30/11/2025,8,La Molisana Magnolia Campobasso,Logiman Broni,False,72,68,W,5,65.0,65.0,65.0
+53372,30/11/2025,8,Dinamo Banco di Sardegna Sassari,O.ME.P.S. Battipaglia,True,86,72,W,4,75.8,76.0,75.9
+53372,30/11/2025,8,O.ME.P.S. Battipaglia,Dinamo Banco di Sardegna Sassari,False,72,86,L,4,76.0,75.8,75.9
+53373,30/11/2025,8,Umana Reyer Venezia,RMB Brixia Basket San Paolo,True,69,55,W,4,72.0,71.6,71.8
+53373,30/11/2025,8,RMB Brixia Basket San Paolo,Umana Reyer Venezia,False,55,69,L,4,71.6,72.0,71.8
+53374,30/11/2025,8,Geas Sesto San Giovanni,Alama San Martino di Lupari,True,82,70,W,4,69.5,72.0,70.8
+53374,30/11/2025,8,Alama San Martino di Lupari,Geas Sesto San Giovanni,False,70,82,L,4,72.0,69.5,70.8
+53375,29/11/2025,8,Autosped G Castelnuovo Scrivia,People Strategy Roseto,True,86,77,W,4,71.9,72.3,72.1
+53375,29/11/2025,8,People Strategy Roseto,Autosped G Castelnuovo Scrivia,False,77,86,L,4,72.3,71.9,72.1
+53376,03/12/2025,9,RMB Brixia Basket San Paolo,O.ME.P.S. Battipaglia,True,75,71,W,4,75.8,74.8,75.3
+53376,03/12/2025,9,O.ME.P.S. Battipaglia,RMB Brixia Basket San Paolo,False,71,75,L,4,74.8,75.8,75.3
+53377,03/12/2025,9,People Strategy Roseto,Alama San Martino di Lupari,True,86,69,W,4,77.8,77.5,77.7
+53377,03/12/2025,9,Alama San Martino di Lupari,People Strategy Roseto,False,69,86,L,4,77.5,77.8,77.7
+53378,03/12/2025,9,Logiman Broni,Umana Reyer Venezia,True,45,66,L,4,73.2,68.2,70.7
+53378,03/12/2025,9,Umana Reyer Venezia,Logiman Broni,False,66,45,W,4,68.2,73.2,70.7
+53379,03/12/2025,9,Famila Wuber Schio,Autosped G Castelnuovo Scrivia,True,79,66,W,4,74.4,73.3,73.8
+53379,03/12/2025,9,Autosped G Castelnuovo Scrivia,Famila Wuber Schio,False,66,79,L,4,73.3,74.4,73.8
+53381,03/12/2025,9,Dinamo Banco di Sardegna Sassari,Geas Sesto San Giovanni,True,69,65,W,4,72.9,72.9,72.9
+53381,03/12/2025,9,Geas Sesto San Giovanni,Dinamo Banco di Sardegna Sassari,False,65,69,L,4,72.9,72.9,72.9
+53382,07/12/2025,10,Alama San Martino di Lupari,Logiman Broni,True,69,73,L,4,72.0,67.7,69.8
+53382,07/12/2025,10,Logiman Broni,Alama San Martino di Lupari,False,73,69,W,4,67.7,72.0,69.8
+53383,07/12/2025,10,O.ME.P.S. Battipaglia,La Molisana Magnolia Campobasso,True,59,71,L,4,71.4,72.0,71.7
+53383,07/12/2025,10,La Molisana Magnolia Campobasso,O.ME.P.S. Battipaglia,False,71,59,W,4,72.0,71.4,71.7
+53384,07/12/2025,10,People Strategy Roseto,Dinamo Banco di Sardegna Sassari,True,88,66,W,4,74.5,73.4,74.0
+53384,07/12/2025,10,Dinamo Banco di Sardegna Sassari,People Strategy Roseto,False,66,88,L,4,73.4,74.5,74.0
+53385,06/12/2025,10,Autosped G Castelnuovo Scrivia,RMB Brixia Basket San Paolo,True,87,38,W,4,69.0,69.5,69.2
+53385,06/12/2025,10,RMB Brixia Basket San Paolo,Autosped G Castelnuovo Scrivia,False,38,87,L,4,69.5,69.0,69.2
+53386,07/12/2025,10,Geas Sesto San Giovanni,Famila Wuber Schio,True,44,66,L,4,65.3,66.6,65.9
+53386,07/12/2025,10,Famila Wuber Schio,Geas Sesto San Giovanni,False,66,44,W,4,66.6,65.3,65.9
+53387,13/12/2025,11,RMB Brixia Basket San Paolo,People Strategy Roseto,True,64,75,L,4,77.5,78.6,78.0
+53387,13/12/2025,11,People Strategy Roseto,RMB Brixia Basket San Paolo,False,75,64,W,4,78.6,77.5,78.0
+53388,14/12/2025,11,Famila Wuber Schio,O.ME.P.S. Battipaglia,True,100,52,W,4,70.8,71.5,71.2
+53388,14/12/2025,11,O.ME.P.S. Battipaglia,Famila Wuber Schio,False,52,100,L,4,71.5,70.8,71.2
+53389,14/12/2025,11,Umana Reyer Venezia,Alama San Martino di Lupari,True,87,66,W,4,79.0,81.0,80.0
+53389,14/12/2025,11,Alama San Martino di Lupari,Umana Reyer Venezia,False,66,87,L,4,81.0,79.0,80.0
+53390,14/12/2025,11,Logiman Broni,Autosped G Castelnuovo Scrivia,True,63,84,L,4,65.8,65.6,65.7
+53390,14/12/2025,11,Autosped G Castelnuovo Scrivia,Logiman Broni,False,84,63,W,4,65.6,65.8,65.7
+53391,14/12/2025,11,La Molisana Magnolia Campobasso,Geas Sesto San Giovanni,True,55,60,L,4,70.1,72.3,71.2
+53391,14/12/2025,11,Geas Sesto San Giovanni,La Molisana Magnolia Campobasso,False,60,55,W,4,72.3,70.1,71.2
+53392,21/12/2025,12,La Molisana Magnolia Campobasso,RMB Brixia Basket San Paolo,True,77,63,W,4,74.5,73.6,74.0
+53392,21/12/2025,12,RMB Brixia Basket San Paolo,La Molisana Magnolia Campobasso,False,63,77,L,4,73.6,74.5,74.0
+53393,21/12/2025,12,O.ME.P.S. Battipaglia,Umana Reyer Venezia,True,59,82,L,4,77.5,77.9,77.7
+53393,21/12/2025,12,Umana Reyer Venezia,O.ME.P.S. Battipaglia,False,82,59,W,4,77.9,77.5,77.7
+53394,21/12/2025,12,Alama San Martino di Lupari,Dinamo Banco di Sardegna Sassari,True,68,66,W,4,76.6,75.5,76.0
+53394,21/12/2025,12,Dinamo Banco di Sardegna Sassari,Alama San Martino di Lupari,False,66,68,L,4,75.5,76.6,76.0
+53395,21/12/2025,12,Autosped G Castelnuovo Scrivia,Geas Sesto San Giovanni,True,69,49,W,4,67.8,66.6,67.2
+53395,21/12/2025,12,Geas Sesto San Giovanni,Autosped G Castelnuovo Scrivia,False,49,69,L,4,66.6,67.8,67.2
+53396,20/12/2025,12,People Strategy Roseto,Famila Wuber Schio,True,62,91,L,4,82.0,78.5,80.2
+53396,20/12/2025,12,Famila Wuber Schio,People Strategy Roseto,False,91,62,W,4,78.5,82.0,80.2
+53397,29/12/2025,13,Famila Wuber Schio,Alama San Martino di Lupari,True,79,51,W,4,71.0,70.0,70.5
+53397,29/12/2025,13,Alama San Martino di Lupari,Famila Wuber Schio,False,51,79,L,4,70.0,71.0,70.5
+53398,28/12/2025,13,Dinamo Banco di Sardegna Sassari,Autosped G Castelnuovo Scrivia,True,65,86,L,4,70.9,74.0,72.5
+53398,28/12/2025,13,Autosped G Castelnuovo Scrivia,Dinamo Banco di Sardegna Sassari,False,86,65,W,4,74.0,70.9,72.5
+53399,28/12/2025,13,Geas Sesto San Giovanni,People Strategy Roseto,True,72,50,W,4,73.2,72.0,72.6
+53399,28/12/2025,13,People Strategy Roseto,Geas Sesto San Giovanni,False,50,72,L,4,72.0,73.2,72.6
+53400,28/12/2025,13,Logiman Broni,O.ME.P.S. Battipaglia,True,80,63,W,4,75.5,76.3,75.9
+53400,28/12/2025,13,O.ME.P.S. Battipaglia,Logiman Broni,False,63,80,L,4,76.3,75.5,75.9
+53401,28/12/2025,13,Umana Reyer Venezia,La Molisana Magnolia Campobasso,True,50,55,L,4,70.5,69.8,70.2
+53401,28/12/2025,13,La Molisana Magnolia Campobasso,Umana Reyer Venezia,False,55,50,W,4,69.8,70.5,70.2
+53402,11/01/2026,14,Alama San Martino di Lupari,O.ME.P.S. Battipaglia,True,90,53,W,4,76.6,75.4,76.0
+53402,11/01/2026,14,O.ME.P.S. Battipaglia,Alama San Martino di Lupari,False,53,90,L,4,75.4,76.6,76.0
+53403,10/01/2026,14,Famila Wuber Schio,Logiman Broni,True,81,40,W,4,70.8,69.8,70.3
+53403,10/01/2026,14,Logiman Broni,Famila Wuber Schio,False,40,81,L,4,69.8,70.8,70.3
+53404,10/01/2026,14,People Strategy Roseto,Umana Reyer Venezia,True,67,85,L,4,67.5,70.4,69.0
+53404,10/01/2026,14,Umana Reyer Venezia,People Strategy Roseto,False,85,67,W,4,70.4,67.5,69.0
+53405,10/01/2026,14,Autosped G Castelnuovo Scrivia,La Molisana Magnolia Campobasso,True,51,61,L,4,68.2,68.4,68.3
+53405,10/01/2026,14,La Molisana Magnolia Campobasso,Autosped G Castelnuovo Scrivia,False,61,51,W,4,68.4,68.2,68.3
+53406,11/01/2026,14,Dinamo Banco di Sardegna Sassari,RMB Brixia Basket San Paolo,True,87,60,W,4,73.2,75.0,74.1
+53406,11/01/2026,14,RMB Brixia Basket San Paolo,Dinamo Banco di Sardegna Sassari,False,60,87,L,4,75.0,73.2,74.1
+53407,18/01/2026,15,O.ME.P.S. Battipaglia,Geas Sesto San Giovanni,True,50,65,L,4,68.3,69.8,69.0
+53407,18/01/2026,15,Geas Sesto San Giovanni,O.ME.P.S. Battipaglia,False,65,50,W,4,69.8,68.3,69.0
+53408,18/01/2026,15,Logiman Broni,Dinamo Banco di Sardegna Sassari,True,68,62,W,4,67.8,73.6,70.7
+53408,18/01/2026,15,Dinamo Banco di Sardegna Sassari,Logiman Broni,False,62,68,L,4,73.6,67.8,70.7
+53409,18/01/2026,15,Umana Reyer Venezia,Autosped G Castelnuovo Scrivia,True,71,62,W,4,73.4,74.1,73.8
+53409,18/01/2026,15,Autosped G Castelnuovo Scrivia,Umana Reyer Venezia,False,62,71,L,4,74.1,73.4,73.8
+53410,18/01/2026,15,La Molisana Magnolia Campobasso,Alama San Martino di Lupari,True,73,65,W,4,76.6,76.8,76.7
+53410,18/01/2026,15,Alama San Martino di Lupari,La Molisana Magnolia Campobasso,False,65,73,L,4,76.8,76.6,76.7
+53411,17/01/2026,15,RMB Brixia Basket San Paolo,Famila Wuber Schio,True,50,110,L,4,73.2,72.7,73.0
+53411,17/01/2026,15,Famila Wuber Schio,RMB Brixia Basket San Paolo,False,110,50,W,4,72.7,73.2,73.0
+53412,25/01/2026,16,Geas Sesto San Giovanni,RMB Brixia Basket San Paolo,True,81,43,W,4,71.2,72.0,71.6
+53412,25/01/2026,16,RMB Brixia Basket San Paolo,Geas Sesto San Giovanni,False,43,81,L,4,72.0,71.2,71.6
+53413,25/01/2026,16,Dinamo Banco di Sardegna Sassari,Umana Reyer Venezia,True,63,85,L,4,78.6,78.4,78.5
+53413,25/01/2026,16,Umana Reyer Venezia,Dinamo Banco di Sardegna Sassari,False,85,63,W,4,78.4,78.6,78.5
+53414,24/01/2026,16,Autosped G Castelnuovo Scrivia,O.ME.P.S. Battipaglia,True,73,69,W,4,76.4,78.1,77.2
+53414,24/01/2026,16,O.ME.P.S. Battipaglia,Autosped G Castelnuovo Scrivia,False,69,73,L,4,78.1,76.4,77.2
+53415,25/01/2026,16,Famila Wuber Schio,La Molisana Magnolia Campobasso,True,67,47,W,4,67.6,67.1,67.3
+53415,25/01/2026,16,La Molisana Magnolia Campobasso,Famila Wuber Schio,False,47,67,L,4,67.1,67.6,67.3
+53416,25/01/2026,16,People Strategy Roseto,Logiman Broni,True,73,67,W,4,70.8,70.2,70.5
+53416,25/01/2026,16,Logiman Broni,People Strategy Roseto,False,67,73,L,4,70.2,70.8,70.5
+53417,01/02/2026,17,Umana Reyer Venezia,Famila Wuber Schio,True,69,80,L,4,67.8,66.4,67.1
+53417,01/02/2026,17,Famila Wuber Schio,Umana Reyer Venezia,False,80,69,W,4,66.4,67.8,67.1
+53418,01/02/2026,17,Logiman Broni,Geas Sesto San Giovanni,True,51,63,L,4,66.8,63.3,65.0
+53418,01/02/2026,17,Geas Sesto San Giovanni,Logiman Broni,False,63,51,W,4,63.3,66.8,65.0
+53419,01/02/2026,17,O.ME.P.S. Battipaglia,People Strategy Roseto,True,74,78,L,4,74.8,72.4,73.6
+53419,01/02/2026,17,People Strategy Roseto,O.ME.P.S. Battipaglia,False,78,74,W,4,72.4,74.8,73.6
+53420,01/02/2026,17,RMB Brixia Basket San Paolo,Alama San Martino di Lupari,True,78,73,W,4,84.3,81.7,83.0
+53420,01/02/2026,17,Alama San Martino di Lupari,RMB Brixia Basket San Paolo,False,73,78,L,4,81.7,84.3,83.0
+53421,01/02/2026,17,La Molisana Magnolia Campobasso,Dinamo Banco di Sardegna Sassari,True,76,53,W,4,71.8,73.4,72.6
+53421,01/02/2026,17,Dinamo Banco di Sardegna Sassari,La Molisana Magnolia Campobasso,False,53,76,L,4,73.4,71.8,72.6
+53422,08/02/2026,18,Logiman Broni,RMB Brixia Basket San Paolo,True,70,64,W,4,72.6,74.2,73.4
+53422,08/02/2026,18,RMB Brixia Basket San Paolo,Logiman Broni,False,64,70,L,4,74.2,72.6,73.4
+53423,07/02/2026,18,Autosped G Castelnuovo Scrivia,Alama San Martino di Lupari,True,72,70,W,4,74.8,75.2,75.0
+53423,07/02/2026,18,Alama San Martino di Lupari,Autosped G Castelnuovo Scrivia,False,70,72,L,4,75.2,74.8,75.0
+53424,08/02/2026,18,Dinamo Banco di Sardegna Sassari,Famila Wuber Schio,True,73,89,L,4,74.5,76.6,75.5
+53424,08/02/2026,18,Famila Wuber Schio,Dinamo Banco di Sardegna Sassari,False,89,73,W,4,76.6,74.5,75.5
+53425,08/02/2026,18,Geas Sesto San Giovanni,Umana Reyer Venezia,True,62,68,L,4,73.2,72.6,72.9
+53425,08/02/2026,18,Umana Reyer Venezia,Geas Sesto San Giovanni,False,68,62,W,4,72.6,73.2,72.9
+53426,08/02/2026,18,People Strategy Roseto,La Molisana Magnolia Campobasso,True,81,84,L,4,74.0,73.9,74.0
+53426,08/02/2026,18,La Molisana Magnolia Campobasso,People Strategy Roseto,False,84,81,W,4,73.9,74.0,74.0
+53427,15/02/2026,19,O.ME.P.S. Battipaglia,Dinamo Banco di Sardegna Sassari,True,60,71,L,4,70.7,70.0,70.3
+53427,15/02/2026,19,Dinamo Banco di Sardegna Sassari,O.ME.P.S. Battipaglia,False,71,60,W,4,70.0,70.7,70.3
+53428,15/02/2026,19,La Molisana Magnolia Campobasso,Logiman Broni,True,59,45,W,4,67.8,67.6,67.7
+53428,15/02/2026,19,Logiman Broni,La Molisana Magnolia Campobasso,False,45,59,L,4,67.6,67.8,67.7
+53429,15/02/2026,19,RMB Brixia Basket San Paolo,Umana Reyer Venezia,True,64,71,L,4,73.0,69.4,71.2
+53429,15/02/2026,19,Umana Reyer Venezia,RMB Brixia Basket San Paolo,False,71,64,W,4,69.4,73.0,71.2
+53430,15/02/2026,19,People Strategy Roseto,Autosped G Castelnuovo Scrivia,True,73,85,L,4,82.4,81.0,81.7
+53430,15/02/2026,19,Autosped G Castelnuovo Scrivia,People Strategy Roseto,False,85,73,W,4,81.0,82.4,81.7
+53431,15/02/2026,19,Alama San Martino di Lupari,Geas Sesto San Giovanni,True,75,69,W,4,67.5,68.3,67.9
+53431,15/02/2026,19,Geas Sesto San Giovanni,Alama San Martino di Lupari,False,69,75,L,4,68.3,67.5,67.9
+53432,22/02/2026,20,Geas Sesto San Giovanni,Dinamo Banco di Sardegna Sassari,True,59,57,W,4,73.2,69.5,71.3
+53432,22/02/2026,20,Dinamo Banco di Sardegna Sassari,Geas Sesto San Giovanni,False,57,59,L,4,69.5,73.2,71.3
+53433,22/02/2026,20,Umana Reyer Venezia,Logiman Broni,True,72,57,W,4,77.9,78.4,78.2
+53433,22/02/2026,20,Logiman Broni,Umana Reyer Venezia,False,57,72,L,4,78.4,77.9,78.2
+53434,21/02/2026,20,Autosped G Castelnuovo Scrivia,Famila Wuber Schio,True,57,65,L,4,70.7,73.2,72.0
+53434,21/02/2026,20,Famila Wuber Schio,Autosped G Castelnuovo Scrivia,False,65,57,W,4,73.2,70.7,72.0
+53435,22/02/2026,20,O.ME.P.S. Battipaglia,RMB Brixia Basket San Paolo,True,85,66,W,4,73.2,73.4,73.3
+53435,22/02/2026,20,RMB Brixia Basket San Paolo,O.ME.P.S. Battipaglia,False,66,85,L,4,73.4,73.2,73.3
+53436,22/02/2026,20,Alama San Martino di Lupari,People Strategy Roseto,True,75,63,W,4,73.5,77.7,75.6
+53436,22/02/2026,20,People Strategy Roseto,Alama San Martino di Lupari,False,63,75,L,4,77.7,73.5,75.6
+53437,28/02/2026,21,La Molisana Magnolia Campobasso,O.ME.P.S. Battipaglia,True,63,57,W,5,66.0,66.6,66.3
+53437,28/02/2026,21,O.ME.P.S. Battipaglia,La Molisana Magnolia Campobasso,False,57,63,L,5,66.6,66.0,66.3
+53438,28/02/2026,21,Famila Wuber Schio,Geas Sesto San Giovanni,True,79,54,W,4,68.0,67.8,67.9
+53438,28/02/2026,21,Geas Sesto San Giovanni,Famila Wuber Schio,False,54,79,L,4,67.8,68.0,67.9
+53439,01/03/2026,21,Logiman Broni,Alama San Martino di Lupari,True,59,74,L,4,70.8,67.5,69.2
+53439,01/03/2026,21,Alama San Martino di Lupari,Logiman Broni,False,74,59,W,4,67.5,70.8,69.2
+53440,28/02/2026,21,Dinamo Banco di Sardegna Sassari,People Strategy Roseto,True,75,88,L,4,83.0,82.4,82.7
+53440,28/02/2026,21,People Strategy Roseto,Dinamo Banco di Sardegna Sassari,False,88,75,W,4,82.4,83.0,82.7
+53441,01/03/2026,21,RMB Brixia Basket San Paolo,Autosped G Castelnuovo Scrivia,True,55,93,L,4,73.5,76.1,74.8
+53441,01/03/2026,21,Autosped G Castelnuovo Scrivia,RMB Brixia Basket San Paolo,False,93,55,W,4,76.1,73.5,74.8
+53442,04/03/2026,22,People Strategy Roseto,RMB Brixia Basket San Paolo,True,76,65,W,4,82.6,81.6,82.1
+53442,04/03/2026,22,RMB Brixia Basket San Paolo,People Strategy Roseto,False,65,76,L,4,81.6,82.6,82.1
+53443,10/02/2026,22,O.ME.P.S. Battipaglia,Famila Wuber Schio,True,73,88,L,4,70.0,65.8,67.9
+53443,10/02/2026,22,Famila Wuber Schio,O.ME.P.S. Battipaglia,False,88,73,W,4,65.8,70.0,67.9
+53444,04/03/2026,22,Autosped G Castelnuovo Scrivia,Logiman Broni,True,76,51,W,4,68.7,68.3,68.5
+53444,04/03/2026,22,Logiman Broni,Autosped G Castelnuovo Scrivia,False,51,76,L,4,68.3,68.7,68.5
+53445,04/03/2026,22,Geas Sesto San Giovanni,La Molisana Magnolia Campobasso,True,71,50,W,4,61.3,66.5,63.9
+53445,04/03/2026,22,La Molisana Magnolia Campobasso,Geas Sesto San Giovanni,False,50,71,L,4,66.5,61.3,63.9
+53446,12/02/2026,22,Alama San Martino di Lupari,Umana Reyer Venezia,True,81,77,W,4,74.9,77.2,76.1
+53446,12/02/2026,22,Umana Reyer Venezia,Alama San Martino di Lupari,False,77,81,L,4,77.2,74.9,76.1

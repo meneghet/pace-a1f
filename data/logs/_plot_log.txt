@@ -1,0 +1,30 @@
+Saved plot to data/pace_Alama_A1_2025-26.png
+    match_id                          opponent  is_home  ...  opp_score  result  pace
+0      53339  Dinamo Banco di Sardegna Sassari    False  ...         76       L  76.8
+1      53345                Famila Wuber Schio     True  ...         77       L  70.1
+2      53350             O.ME.P.S. Battipaglia    False  ...         65       W  72.4
+3      53355   La Molisana Magnolia Campobasso     True  ...         68       L  69.9
+4      53364       RMB Brixia Basket San Paolo     True  ...         60       W  76.2
+5      53368    Autosped G Castelnuovo Scrivia     True  ...         91       L  73.6
+6      53374           Geas Sesto San Giovanni    False  ...         82       L  70.8
+7      53377            People Strategy Roseto    False  ...         86       L  77.6
+8      53382                     Logiman Broni     True  ...         73       L  69.9
+9      53389               Umana Reyer Venezia    False  ...         87       L  80.0
+10     53394  Dinamo Banco di Sardegna Sassari     True  ...         66       W  76.1
+11     53397                Famila Wuber Schio    False  ...         79       L  70.5
+12     53402             O.ME.P.S. Battipaglia     True  ...         53       W  76.0
+13     53410   La Molisana Magnolia Campobasso    False  ...         73       L  76.7
+14     53420       RMB Brixia Basket San Paolo    False  ...         78       L  83.0
+15     53423    Autosped G Castelnuovo Scrivia    False  ...         72       L  75.0
+16     53431           Geas Sesto San Giovanni     True  ...         69       W  67.9
+17     53436            People Strategy Roseto     True  ...         63       W  75.6
+18     53439                     Logiman Broni    False  ...         59       W  69.2
+19     53446               Umana Reyer Venezia     True  ...         77       W  76.1
+
+[20 rows x 7 columns]
+
+Pace medio stagione: 74.17  (min 67.9, max 83.0)
+result
+L    74.491667
+W    73.687500
+Name: pace, dtype: float64

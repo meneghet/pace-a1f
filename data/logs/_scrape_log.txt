@@ -1,0 +1,21 @@
+Found 110 matches in competition 313
+  MID=53339: Dinamo Banco di Sardegna Sassari 76-64 Alama San Martino di Lupari -> pace=76.8
+  MID=53345: Alama San Martino di Lupari 58-77 Famila Wuber Schio -> pace=70.1
+  MID=53350: O.ME.P.S. Battipaglia 65-71 Alama San Martino di Lupari -> pace=72.4
+  MID=53355: Alama San Martino di Lupari 49-68 La Molisana Magnolia Campobasso -> pace=69.9
+  MID=53364: Alama San Martino di Lupari 62-60 RMB Brixia Basket San Paolo -> pace=76.2
+  MID=53368: Alama San Martino di Lupari 84-91 Autosped G Castelnuovo Scrivia -> pace=73.6
+  MID=53374: Geas Sesto San Giovanni 82-70 Alama San Martino di Lupari -> pace=70.8
+  MID=53377: People Strategy Roseto 86-69 Alama San Martino di Lupari -> pace=77.6
+  MID=53382: Alama San Martino di Lupari 69-73 Logiman Broni -> pace=69.9
+  MID=53389: Umana Reyer Venezia 87-66 Alama San Martino di Lupari -> pace=80.0
+  MID=53394: Alama San Martino di Lupari 68-66 Dinamo Banco di Sardegna Sassari -> pace=76.1
+  MID=53397: Famila Wuber Schio 79-51 Alama San Martino di Lupari -> pace=70.5
+  MID=53402: Alama San Martino di Lupari 90-53 O.ME.P.S. Battipaglia -> pace=76.0
+  MID=53410: La Molisana Magnolia Campobasso 73-65 Alama San Martino di Lupari -> pace=76.7
+  MID=53420: RMB Brixia Basket San Paolo 78-73 Alama San Martino di Lupari -> pace=83.0
+  MID=53423: Autosped G Castelnuovo Scrivia 72-70 Alama San Martino di Lupari -> pace=75.0
+  MID=53431: Alama San Martino di Lupari 75-69 Geas Sesto San Giovanni -> pace=67.9
+  MID=53436: Alama San Martino di Lupari 75-63 People Strategy Roseto -> pace=75.6
+  MID=53439: Logiman Broni 59-74 Alama San Martino di Lupari -> pace=69.2
+  MID=53446: Alama San Martino di Lupari 81-77 Umana Reyer Venezia -> pace=76.1

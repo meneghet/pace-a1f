@@ -1,0 +1,21 @@
+match_id,team,opponent,is_home,team_score,opp_score,result,n_periods,pace
+53339,Alama San Martino di Lupari,Dinamo Banco di Sardegna Sassari,False,64,76,L,4,76.8
+53345,Alama San Martino di Lupari,Famila Wuber Schio,True,58,77,L,4,70.1
+53350,Alama San Martino di Lupari,O.ME.P.S. Battipaglia,False,71,65,W,4,72.4
+53355,Alama San Martino di Lupari,La Molisana Magnolia Campobasso,True,49,68,L,4,69.9
+53364,Alama San Martino di Lupari,RMB Brixia Basket San Paolo,True,62,60,W,4,76.2
+53368,Alama San Martino di Lupari,Autosped G Castelnuovo Scrivia,True,84,91,L,4,73.6
+53374,Alama San Martino di Lupari,Geas Sesto San Giovanni,False,70,82,L,4,70.8
+53377,Alama San Martino di Lupari,People Strategy Roseto,False,69,86,L,4,77.6
+53382,Alama San Martino di Lupari,Logiman Broni,True,69,73,L,4,69.9
+53389,Alama San Martino di Lupari,Umana Reyer Venezia,False,66,87,L,4,80.0
+53394,Alama San Martino di Lupari,Dinamo Banco di Sardegna Sassari,True,68,66,W,4,76.1
+53397,Alama San Martino di Lupari,Famila Wuber Schio,False,51,79,L,4,70.5
+53402,Alama San Martino di Lupari,O.ME.P.S. Battipaglia,True,90,53,W,4,76.0
+53410,Alama San Martino di Lupari,La Molisana Magnolia Campobasso,False,65,73,L,4,76.7
+53420,Alama San Martino di Lupari,RMB Brixia Basket San Paolo,False,73,78,L,4,83.0
+53423,Alama San Martino di Lupari,Autosped G Castelnuovo Scrivia,False,70,72,L,4,75.0
+53431,Alama San Martino di Lupari,Geas Sesto San Giovanni,True,75,69,W,4,67.9
+53436,Alama San Martino di Lupari,People Strategy Roseto,True,75,63,W,4,75.6
+53439,Alama San Martino di Lupari,Logiman Broni,False,74,59,W,4,69.2
+53446,Alama San Martino di Lupari,Umana Reyer Venezia,True,81,77,W,4,76.1

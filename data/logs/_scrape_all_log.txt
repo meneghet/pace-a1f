@@ -1,0 +1,111 @@
+Found 110 matches in competition 313
+  MID=53336 (g.1, 04/10/2025): Famila Wuber Schio 76-52 People Strategy Roseto -> game_pace=73.3
+  MID=53337 (g.1, 04/10/2025): Umana Reyer Venezia 74-50 O.ME.P.S. Battipaglia -> game_pace=80.2
+  MID=53338 (g.1, 05/10/2025): Geas Sesto San Giovanni 65-56 Autosped G Castelnuovo Scrivia -> game_pace=70.8
+  MID=53339 (g.1, 04/10/2025): Dinamo Banco di Sardegna Sassari 76-64 Alama San Martino di Lupari -> game_pace=76.8
+  MID=53340 (g.1, 05/10/2025): RMB Brixia Basket San Paolo 37-87 La Molisana Magnolia Campobasso -> game_pace=77.3
+  MID=53341 (g.2, 12/10/2025): La Molisana Magnolia Campobasso 79-84 Umana Reyer Venezia -> game_pace=70.8
+  MID=53342 (g.2, 12/10/2025): People Strategy Roseto 71-64 Geas Sesto San Giovanni -> game_pace=73.8
+  MID=53343 (g.2, 12/10/2025): O.ME.P.S. Battipaglia 63-78 Logiman Broni -> game_pace=66.2
+  MID=53344 (g.2, 11/10/2025): Autosped G Castelnuovo Scrivia 69-73 Dinamo Banco di Sardegna Sassari -> game_pace=71.8
+  MID=53345 (g.2, 12/10/2025): Alama San Martino di Lupari 58-77 Famila Wuber Schio -> game_pace=70.1
+  MID=53346 (g.3, 19/10/2025): Logiman Broni 44-87 Famila Wuber Schio -> game_pace=66.8
+  MID=53347 (g.3, 19/10/2025): RMB Brixia Basket San Paolo 65-81 Dinamo Banco di Sardegna Sassari -> game_pace=76.3
+  MID=53348 (g.3, 19/10/2025): Umana Reyer Venezia 95-73 People Strategy Roseto -> game_pace=81.7
+  MID=53349 (g.3, 19/10/2025): La Molisana Magnolia Campobasso 61-57 Autosped G Castelnuovo Scrivia -> game_pace=71.2
+  MID=53350 (g.3, 19/10/2025): O.ME.P.S. Battipaglia 65-71 Alama San Martino di Lupari -> game_pace=72.4
+  MID=53351 (g.4, 26/10/2025): Autosped G Castelnuovo Scrivia 57-72 Umana Reyer Venezia -> game_pace=77.8
+  MID=53352 (g.4, 25/10/2025): Famila Wuber Schio 89-39 RMB Brixia Basket San Paolo -> game_pace=78.1
+  MID=53353 (g.4, 26/10/2025): Dinamo Banco di Sardegna Sassari 71-76 Logiman Broni -> game_pace=73.8
+  MID=53354 (g.4, 26/10/2025): Geas Sesto San Giovanni 66-45 O.ME.P.S. Battipaglia -> game_pace=70.8
+  MID=53355 (g.4, 26/10/2025): Alama San Martino di Lupari 49-68 La Molisana Magnolia Campobasso -> game_pace=69.9
+  MID=53356 (g.5, 01/11/2025): La Molisana Magnolia Campobasso 70-76 Famila Wuber Schio -> game_pace=71.0
+  MID=53357 (g.5, 02/11/2025): Logiman Broni 82-71 People Strategy Roseto -> game_pace=70.2
+  MID=53358 (g.5, 01/11/2025): Umana Reyer Venezia 86-44 Dinamo Banco di Sardegna Sassari -> game_pace=79.1
+  MID=53359 (g.5, 02/11/2025): O.ME.P.S. Battipaglia 83-85 Autosped G Castelnuovo Scrivia -> game_pace=81.2
+  MID=53360 (g.5, 02/11/2025): RMB Brixia Basket San Paolo 60-79 Geas Sesto San Giovanni -> game_pace=69.2
+  MID=53361 (g.6, 08/11/2025): Geas Sesto San Giovanni 76-58 Logiman Broni -> game_pace=64.5
+  MID=53362 (g.6, 08/11/2025): Dinamo Banco di Sardegna Sassari 68-76 La Molisana Magnolia Campobasso -> game_pace=65.0
+  MID=53363 (g.6, 08/11/2025): People Strategy Roseto 68-70 O.ME.P.S. Battipaglia -> game_pace=74.3
+  MID=53364 (g.6, 08/11/2025): Alama San Martino di Lupari 62-60 RMB Brixia Basket San Paolo -> game_pace=76.2
+  MID=53365 (g.6, 08/11/2025): Famila Wuber Schio 68-54 Umana Reyer Venezia -> game_pace=71.1
+  MID=53366 (g.7, 22/11/2025): La Molisana Magnolia Campobasso 69-49 People Strategy Roseto -> game_pace=68.4
+  MID=53367 (g.7, 23/11/2025): Umana Reyer Venezia 71-58 Geas Sesto San Giovanni -> game_pace=72.2
+  MID=53368 (g.7, 23/11/2025): Alama San Martino di Lupari 84-91 Autosped G Castelnuovo Scrivia -> game_pace=73.6
+  MID=53369 (g.7, 23/11/2025): RMB Brixia Basket San Paolo 87-63 Logiman Broni -> game_pace=73.1
+  MID=53370 (g.7, 23/11/2025): Famila Wuber Schio 94-51 Dinamo Banco di Sardegna Sassari -> game_pace=70.7
+  MID=53371 (g.8, 30/11/2025): Logiman Broni 68-72 La Molisana Magnolia Campobasso -> game_pace=65.0
+  MID=53372 (g.8, 30/11/2025): Dinamo Banco di Sardegna Sassari 86-72 O.ME.P.S. Battipaglia -> game_pace=75.9
+  MID=53373 (g.8, 30/11/2025): Umana Reyer Venezia 69-55 RMB Brixia Basket San Paolo -> game_pace=71.8
+  MID=53374 (g.8, 30/11/2025): Geas Sesto San Giovanni 82-70 Alama San Martino di Lupari -> game_pace=70.8
+  MID=53375 (g.8, 29/11/2025): Autosped G Castelnuovo Scrivia 86-77 People Strategy Roseto -> game_pace=72.1
+  MID=53376 (g.9, 03/12/2025): RMB Brixia Basket San Paolo 75-71 O.ME.P.S. Battipaglia -> game_pace=75.3
+  MID=53377 (g.9, 03/12/2025): People Strategy Roseto 86-69 Alama San Martino di Lupari -> game_pace=77.7
+  MID=53378 (g.9, 03/12/2025): Logiman Broni 45-66 Umana Reyer Venezia -> game_pace=70.7
+  MID=53379 (g.9, 03/12/2025): Famila Wuber Schio 79-66 Autosped G Castelnuovo Scrivia -> game_pace=73.8
+  MID=53381 (g.9, 03/12/2025): Dinamo Banco di Sardegna Sassari 69-65 Geas Sesto San Giovanni -> game_pace=72.9
+  MID=53382 (g.10, 07/12/2025): Alama San Martino di Lupari 69-73 Logiman Broni -> game_pace=69.8
+  MID=53383 (g.10, 07/12/2025): O.ME.P.S. Battipaglia 59-71 La Molisana Magnolia Campobasso -> game_pace=71.7
+  MID=53384 (g.10, 07/12/2025): People Strategy Roseto 88-66 Dinamo Banco di Sardegna Sassari -> game_pace=74.0
+  MID=53385 (g.10, 06/12/2025): Autosped G Castelnuovo Scrivia 87-38 RMB Brixia Basket San Paolo -> game_pace=69.2
+  MID=53386 (g.10, 07/12/2025): Geas Sesto San Giovanni 44-66 Famila Wuber Schio -> game_pace=65.9
+  MID=53387 (g.11, 13/12/2025): RMB Brixia Basket San Paolo 64-75 People Strategy Roseto -> game_pace=78.0
+  MID=53388 (g.11, 14/12/2025): Famila Wuber Schio 100-52 O.ME.P.S. Battipaglia -> game_pace=71.2
+  MID=53389 (g.11, 14/12/2025): Umana Reyer Venezia 87-66 Alama San Martino di Lupari -> game_pace=80.0
+  MID=53390 (g.11, 14/12/2025): Logiman Broni 63-84 Autosped G Castelnuovo Scrivia -> game_pace=65.7
+  MID=53391 (g.11, 14/12/2025): La Molisana Magnolia Campobasso 55-60 Geas Sesto San Giovanni -> game_pace=71.2
+  MID=53392 (g.12, 21/12/2025): La Molisana Magnolia Campobasso 77-63 RMB Brixia Basket San Paolo -> game_pace=74.0
+  MID=53393 (g.12, 21/12/2025): O.ME.P.S. Battipaglia 59-82 Umana Reyer Venezia -> game_pace=77.7
+  MID=53394 (g.12, 21/12/2025): Alama San Martino di Lupari 68-66 Dinamo Banco di Sardegna Sassari -> game_pace=76.0
+  MID=53395 (g.12, 21/12/2025): Autosped G Castelnuovo Scrivia 69-49 Geas Sesto San Giovanni -> game_pace=67.2
+  MID=53396 (g.12, 20/12/2025): People Strategy Roseto 62-91 Famila Wuber Schio -> game_pace=80.2
+  MID=53397 (g.13, 29/12/2025): Famila Wuber Schio 79-51 Alama San Martino di Lupari -> game_pace=70.5
+  MID=53398 (g.13, 28/12/2025): Dinamo Banco di Sardegna Sassari 65-86 Autosped G Castelnuovo Scrivia -> game_pace=72.5
+  MID=53399 (g.13, 28/12/2025): Geas Sesto San Giovanni 72-50 People Strategy Roseto -> game_pace=72.6
+  MID=53400 (g.13, 28/12/2025): Logiman Broni 80-63 O.ME.P.S. Battipaglia -> game_pace=75.9
+  MID=53401 (g.13, 28/12/2025): Umana Reyer Venezia 50-55 La Molisana Magnolia Campobasso -> game_pace=70.2
+  MID=53402 (g.14, 11/01/2026): Alama San Martino di Lupari 90-53 O.ME.P.S. Battipaglia -> game_pace=76.0
+  MID=53403 (g.14, 10/01/2026): Famila Wuber Schio 81-40 Logiman Broni -> game_pace=70.3
+  MID=53404 (g.14, 10/01/2026): People Strategy Roseto 67-85 Umana Reyer Venezia -> game_pace=69.0
+  MID=53405 (g.14, 10/01/2026): Autosped G Castelnuovo Scrivia 51-61 La Molisana Magnolia Campobasso -> game_pace=68.3
+  MID=53406 (g.14, 11/01/2026): Dinamo Banco di Sardegna Sassari 87-60 RMB Brixia Basket San Paolo -> game_pace=74.1
+  MID=53407 (g.15, 18/01/2026): O.ME.P.S. Battipaglia 50-65 Geas Sesto San Giovanni -> game_pace=69.0
+  MID=53408 (g.15, 18/01/2026): Logiman Broni 68-62 Dinamo Banco di Sardegna Sassari -> game_pace=70.7
+  MID=53409 (g.15, 18/01/2026): Umana Reyer Venezia 71-62 Autosped G Castelnuovo Scrivia -> game_pace=73.8
+  MID=53410 (g.15, 18/01/2026): La Molisana Magnolia Campobasso 73-65 Alama San Martino di Lupari -> game_pace=76.7
+  MID=53411 (g.15, 17/01/2026): RMB Brixia Basket San Paolo 50-110 Famila Wuber Schio -> game_pace=73.0
+  MID=53412 (g.16, 25/01/2026): Geas Sesto San Giovanni 81-43 RMB Brixia Basket San Paolo -> game_pace=71.6
+  MID=53413 (g.16, 25/01/2026): Dinamo Banco di Sardegna Sassari 63-85 Umana Reyer Venezia -> game_pace=78.5
+  MID=53414 (g.16, 24/01/2026): Autosped G Castelnuovo Scrivia 73-69 O.ME.P.S. Battipaglia -> game_pace=77.2
+  MID=53415 (g.16, 25/01/2026): Famila Wuber Schio 67-47 La Molisana Magnolia Campobasso -> game_pace=67.3
+  MID=53416 (g.16, 25/01/2026): People Strategy Roseto 73-67 Logiman Broni -> game_pace=70.5
+  MID=53417 (g.17, 01/02/2026): Umana Reyer Venezia 69-80 Famila Wuber Schio -> game_pace=67.1
+  MID=53418 (g.17, 01/02/2026): Logiman Broni 51-63 Geas Sesto San Giovanni -> game_pace=65.0
+  MID=53419 (g.17, 01/02/2026): O.ME.P.S. Battipaglia 74-78 People Strategy Roseto -> game_pace=73.6
+  MID=53420 (g.17, 01/02/2026): RMB Brixia Basket San Paolo 78-73 Alama San Martino di Lupari -> game_pace=83.0
+  MID=53421 (g.17, 01/02/2026): La Molisana Magnolia Campobasso 76-53 Dinamo Banco di Sardegna Sassari -> game_pace=72.6
+  MID=53422 (g.18, 08/02/2026): Logiman Broni 70-64 RMB Brixia Basket San Paolo -> game_pace=73.4
+  MID=53423 (g.18, 07/02/2026): Autosped G Castelnuovo Scrivia 72-70 Alama San Martino di Lupari -> game_pace=75.0
+  MID=53424 (g.18, 08/02/2026): Dinamo Banco di Sardegna Sassari 73-89 Famila Wuber Schio -> game_pace=75.5
+  MID=53425 (g.18, 08/02/2026): Geas Sesto San Giovanni 62-68 Umana Reyer Venezia -> game_pace=72.9
+  MID=53426 (g.18, 08/02/2026): People Strategy Roseto 81-84 La Molisana Magnolia Campobasso -> game_pace=74.0
+  MID=53427 (g.19, 15/02/2026): O.ME.P.S. Battipaglia 60-71 Dinamo Banco di Sardegna Sassari -> game_pace=70.3
+  MID=53428 (g.19, 15/02/2026): La Molisana Magnolia Campobasso 59-45 Logiman Broni -> game_pace=67.7
+  MID=53429 (g.19, 15/02/2026): RMB Brixia Basket San Paolo 64-71 Umana Reyer Venezia -> game_pace=71.2
+  MID=53430 (g.19, 15/02/2026): People Strategy Roseto 73-85 Autosped G Castelnuovo Scrivia -> game_pace=81.7
+  MID=53431 (g.19, 15/02/2026): Alama San Martino di Lupari 75-69 Geas Sesto San Giovanni -> game_pace=67.9
+  MID=53432 (g.20, 22/02/2026): Geas Sesto San Giovanni 59-57 Dinamo Banco di Sardegna Sassari -> game_pace=71.3
+  MID=53433 (g.20, 22/02/2026): Umana Reyer Venezia 72-57 Logiman Broni -> game_pace=78.2
+  MID=53434 (g.20, 21/02/2026): Autosped G Castelnuovo Scrivia 57-65 Famila Wuber Schio -> game_pace=72.0
+  MID=53435 (g.20, 22/02/2026): O.ME.P.S. Battipaglia 85-66 RMB Brixia Basket San Paolo -> game_pace=73.3
+  MID=53436 (g.20, 22/02/2026): Alama San Martino di Lupari 75-63 People Strategy Roseto -> game_pace=75.6
+  MID=53437 (g.21, 28/02/2026): La Molisana Magnolia Campobasso 63-57 O.ME.P.S. Battipaglia -> game_pace=66.3
+  MID=53438 (g.21, 28/02/2026): Famila Wuber Schio 79-54 Geas Sesto San Giovanni -> game_pace=67.9
+  MID=53439 (g.21, 01/03/2026): Logiman Broni 59-74 Alama San Martino di Lupari -> game_pace=69.2
+  MID=53440 (g.21, 28/02/2026): Dinamo Banco di Sardegna Sassari 75-88 People Strategy Roseto -> game_pace=82.7
+  MID=53441 (g.21, 01/03/2026): RMB Brixia Basket San Paolo 55-93 Autosped G Castelnuovo Scrivia -> game_pace=74.8
+  MID=53442 (g.22, 04/03/2026): People Strategy Roseto 76-65 RMB Brixia Basket San Paolo -> game_pace=82.1
+  MID=53443 (g.22, 10/02/2026): O.ME.P.S. Battipaglia 73-88 Famila Wuber Schio -> game_pace=67.9
+  MID=53444 (g.22, 04/03/2026): Autosped G Castelnuovo Scrivia 76-51 Logiman Broni -> game_pace=68.5
+  MID=53445 (g.22, 04/03/2026): Geas Sesto San Giovanni 71-50 La Molisana Magnolia Campobasso -> game_pace=63.9
+  MID=53446 (g.22, 12/02/2026): Alama San Martino di Lupari 81-77 Umana Reyer Venezia -> game_pace=76.1
