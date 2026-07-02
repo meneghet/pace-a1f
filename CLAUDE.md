@@ -16,7 +16,7 @@ femminile 2025/26, da legabasketfemminile.it. Formula da hackastat.eu.
    - `plot_pace.py` → `data/pace_per_team/` (pace per giornata, per squadra)
    - `plot_pace_scatter.py --all` → `data/pace_vs_opponent/` (pace propria vs avversaria)
    - `plot_pace_deviation.py --all` → `data/pace_deviation/` (scostamento da media propria/avversaria)
-   - `plot_pace_vs_winrate.py`, `plot_pace_bar.py`, `plot_oppdev_vs_winrate.py` → `data/summary/`
+   - `plot_pace_vs_winrate.py`, `plot_pace_bar.py` → `data/summary/`
 4. `scripts/team_aliases.json` — nomi corti usati nei grafici (Schio, Venezia,
    Derthona, San Giovanni, Brixia, ecc.), letti da `plot_pace.py::team_alias()`.
    I nomi file usano l'alias; i dati nel CSV usano il nome ufficiale completo.

@@ -10,7 +10,6 @@ IMAGES = {
     "timeline_venezia": "data/cv_report/pace_over_time_venezia_clean.png",
     "deviation_schio": "data/pace_deviation/pace_deviation_Schio.png",
     "deviation_venezia": "data/pace_deviation/pace_deviation_Venezia.png",
-    "oppdev": "data/summary/oppdev_vs_winrate.png",
 }
 
 
@@ -215,17 +214,6 @@ def main():
         <figure><img src="data:image/png;base64,{imgs['deviation_venezia']}" alt="Scostamento dal pace medio, Venezia vs avversaria" /></figure>
       </div>
     </div>
-  </section>
-
-  <section>
-    <p class="chip">04 — TUTTO IL CAMPIONATO</p>
-    <h2>Imporre il ritmo paga?</h2>
-    <p class="caption">
-      Per ogni squadra: quanto in media le avversarie si allontanano dal proprio pace abituale
-      contro di lei (asse x) e la percentuale di vittorie (asse y). Le squadre migliori tendono a
-      stare a sinistra: rallentano le avversarie più di quanto le facciano correre.
-    </p>
-    <figure><img src="data:image/png;base64,{imgs['oppdev']}" alt="Scostamento pace avversaria vs win rate, tutte le squadre" /></figure>
   </section>
 
   <footer>
