@@ -8,6 +8,8 @@ Each side's deviation is measured against its own season-average game_pace,
 so the origin (0,0) means "both sides played exactly at their usual pace".
 x and y differ only because the two baselines (team_avg vs opp_avg) differ,
 not because the game itself had two different paces.
+
+Marker size is proportional to the final-score margin of that game.
 """
 
 import sys
@@ -23,6 +25,11 @@ from plot_pace import slugify, team_alias
 # (-9.2 / +9.2 across the whole dataset), plus a bit of padding.
 DEV_RANGE = (-10, 10)
 
+# Fixed, shared across all teams: global min/max final-score margin
+# (2 / 60 across the whole dataset), mapped to marker area.
+MARGIN_RANGE = (2, 60)
+MARKER_SIZE_RANGE = (40, 400)
+
 WIN_LOSS_PALETTE = {"W": "green", "L": "red"}
 
 FINALISTS = ["Famila Wuber Schio", "Umana Reyer Venezia"]
@@ -36,6 +43,7 @@ def plot_team_pace_deviation(df_team: pd.DataFrame, out_path: str, team_label: s
     df_team = df_team.copy()
     df_team["team_dev"] = df_team["game_pace"] - team_avg
     df_team["opp_dev"] = df_team["game_pace"] - df_team["opponent"].map(team_avg_lookup)
+    df_team["margin"] = (df_team["team_score"] - df_team["opp_score"]).abs()
 
     sns.set_theme(style="whitegrid")
     fig, ax = plt.subplots(figsize=(6.5, 6.5))
@@ -56,7 +64,9 @@ def plot_team_pace_deviation(df_team: pd.DataFrame, out_path: str, team_label: s
              fontsize=14, ha="right", va="center", ma="center", zorder=1)
 
     sns.scatterplot(data=df_team, x="team_dev", y="opp_dev", hue="result",
-                     hue_order=["W", "L"], palette=WIN_LOSS_PALETTE, s=90, ax=ax, zorder=3)
+                     hue_order=["W", "L"], palette=WIN_LOSS_PALETTE,
+                     size="margin", sizes=MARKER_SIZE_RANGE, size_norm=MARGIN_RANGE,
+                     ax=ax, zorder=3)
 
     for _, row in df_team[df_team["opponent"].isin(FINALISTS)].iterrows():
         ax.annotate(team_alias(row["opponent"]), (row["team_dev"], row["opp_dev"]),
