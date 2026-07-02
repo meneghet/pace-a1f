@@ -9,7 +9,7 @@ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 
-from pace import team_possessions, game_minutes, result
+from pace import team_possessions_advanced, game_minutes, result
 
 HEADERS = {"User-Agent": "Mozilla/5.0 (research script - pace analysis)"}
 BASE = "https://www.legabasketfemminile.it/"
@@ -19,7 +19,8 @@ COMPETITION_ID = 313
 # 0:'' 1:'' 2:FALLI_C 3:FALLI_S 4:T2_R 5:T2_T 6:T2_% 7:T3_R 8:T3_T 9:T3_% 10:TL_R 11:TL_T 12:TL_%
 # 13:RIMB_O 14:RIMB_D 15:RIMB_TOT 16:STOP_D 17:STOP_S 18:PALLE_P 19:PALLE_R 20:AS 21:VAL 22:OER
 COL = {
-    "t2_att": 5, "t3_att": 8, "tl_att": 11, "reb_off": 13, "palle_perse": 18,
+    "t2_made": 4, "t2_att": 5, "t3_made": 7, "t3_att": 8, "tl_att": 11,
+    "reb_off": 13, "reb_def": 14, "palle_perse": 18,
 }
 
 
@@ -52,8 +53,10 @@ def parse_team_totals(table) -> dict:
     return {
         "team": team_name,
         "fga": num(COL["t2_att"]) + num(COL["t3_att"]),
+        "fgm": num(COL["t2_made"]) + num(COL["t3_made"]),
         "fta": num(COL["tl_att"]),
         "oreb": num(COL["reb_off"]),
+        "dreb": num(COL["reb_def"]),
         "tov": num(COL["palle_perse"]),
     }
 
@@ -94,10 +97,10 @@ def get_match_boxscore(competition_id: int, match_id: int) -> dict:
         "home_score": home_score,
         "away_score": away_score,
         "n_periods": n_periods,
-        "home_fga": home_stats["fga"], "home_fta": home_stats["fta"],
-        "home_oreb": home_stats["oreb"], "home_tov": home_stats["tov"],
-        "away_fga": away_stats["fga"], "away_fta": away_stats["fta"],
-        "away_oreb": away_stats["oreb"], "away_tov": away_stats["tov"],
+        "home_fga": home_stats["fga"], "home_fgm": home_stats["fgm"], "home_fta": home_stats["fta"],
+        "home_oreb": home_stats["oreb"], "home_dreb": home_stats["dreb"], "home_tov": home_stats["tov"],
+        "away_fga": away_stats["fga"], "away_fgm": away_stats["fgm"], "away_fta": away_stats["fta"],
+        "away_oreb": away_stats["oreb"], "away_dreb": away_stats["dreb"], "away_tov": away_stats["tov"],
     }
 
 
@@ -116,8 +119,12 @@ def build_full_season_dataset(competition_id: int, rate_limit_s: float = 1.0) ->
             continue
 
         minutes = game_minutes(box["n_periods"])
-        home_poss = team_possessions(box["home_fga"], box["home_fta"], box["home_oreb"], box["home_tov"])
-        away_poss = team_possessions(box["away_fga"], box["away_fta"], box["away_oreb"], box["away_tov"])
+        home_poss = team_possessions_advanced(
+            box["home_fga"], box["home_fgm"], box["home_fta"], box["home_oreb"],
+            box["away_dreb"], box["home_tov"])
+        away_poss = team_possessions_advanced(
+            box["away_fga"], box["away_fgm"], box["away_fta"], box["away_oreb"],
+            box["home_dreb"], box["away_tov"])
         home_pace = round(home_poss / minutes * 40, 1)
         away_pace = round(away_poss / minutes * 40, 1)
         game_pace_avg = round((home_pace + away_pace) / 2, 1)
@@ -129,6 +136,7 @@ def build_full_season_dataset(competition_id: int, rate_limit_s: float = 1.0) ->
             opp_score = box["away_score"] if is_home else box["home_score"]
             team_pace = home_pace if is_home else away_pace
             opp_pace = away_pace if is_home else home_pace
+            prefix, opp_prefix = ("home", "away") if is_home else ("away", "home")
 
             rows.append({
                 "match_id": mid,
@@ -141,6 +149,12 @@ def build_full_season_dataset(competition_id: int, rate_limit_s: float = 1.0) ->
                 "opp_score": opp_score,
                 "result": result(team_score, opp_score),
                 "n_periods": box["n_periods"],
+                "team_fga": box[f"{prefix}_fga"], "team_fgm": box[f"{prefix}_fgm"],
+                "team_fta": box[f"{prefix}_fta"], "team_oreb": box[f"{prefix}_oreb"],
+                "team_dreb": box[f"{prefix}_dreb"], "team_tov": box[f"{prefix}_tov"],
+                "opp_fga": box[f"{opp_prefix}_fga"], "opp_fgm": box[f"{opp_prefix}_fgm"],
+                "opp_fta": box[f"{opp_prefix}_fta"], "opp_oreb": box[f"{opp_prefix}_oreb"],
+                "opp_dreb": box[f"{opp_prefix}_dreb"], "opp_tov": box[f"{opp_prefix}_tov"],
                 "team_pace": team_pace,
                 "opp_pace": opp_pace,
                 "game_pace": game_pace_avg,

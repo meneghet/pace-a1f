@@ -30,7 +30,7 @@ def slugify(name: str) -> str:
     return re.sub(r"[^A-Za-z0-9]+", "_", name).strip("_")
 
 
-Y_RANGE = (63, 84)
+Y_RANGE = (62, 83)
 
 
 def plot_team_pace(df_team: pd.DataFrame, out_path: str, team_label: str, league_avg_pace: float):
@@ -66,7 +66,7 @@ def main(master_csv: str, out_dir: str = "data/pace_per_team"):
 
     for team in teams:
         df_team = df[df["team"] == team]
-        out_path = f"{out_dir}/pace_{slugify(team)}_A1_2025-26.png"
+        out_path = f"{out_dir}/pace_{slugify(team_alias(team))}_A1_2025-26.png"
         plot_team_pace(df_team, out_path, team, league_avg_pace)
         mean_pace = df_team["game_pace"].mean()
         print(f"  {team}: {len(df_team)} partite, pace medio {mean_pace:.1f} -> {out_path}")

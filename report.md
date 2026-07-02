@@ -2,19 +2,19 @@
 
 ## Formula usata
 
-Fonte: [hackastat.eu — Possessi e Pace](https://hackastat.eu/learn-a-stat-possessi-e-pace/) (Dean Oliver), versione **semplice**:
+Fonte: [hackastat.eu — Possessi e Pace](https://hackastat.eu/learn-a-stat-possessi-e-pace/) (Dean Oliver). Inizialmente usata la versione semplice, poi passati alla versione **avanzata** (in `scripts/pace.py`, `team_possessions_advanced`) non appena verificato che i dati necessari erano disponibili nel tabellino:
 
 ```
-Possessi_squadra ≈ FGA + 0.44 × FTA − OR + TOV
-Pace_partita = (media(Possessi_casa, Possessi_ospite) / minuti_giocati) × 40
+Possessi_squadra ≈ FGA + 0.44 × FTA − 1.07 × (OR / (OR + oppDR)) × (FGA − FGM) + TOV
+Pace_squadra = (Possessi_squadra / minuti_giocati) × 40
 ```
 
-dove FGA = tiri da 2 tentati + tiri da 3 tentati, FTA = tiri liberi tentati, OR = rimbalzi offensivi, TOV = palle perse. I 40 minuti sono la durata regolamentare italiana (4×10'); si aggiungono 5' per ogni eventuale overtime.
+dove FGA/FGM = tiri da 2+3 tentati/realizzati, FTA = tiri liberi tentati, OR = rimbalzi offensivi propri, oppDR = rimbalzi difensivi dell'avversaria nella stessa partita, TOV = palle perse. I 40 minuti sono la durata regolamentare italiana (4×10'); si aggiungono 5' per ogni eventuale overtime (3 partite su 110 sono andate ai supplementari). Il pace di ciascuna squadra è calcolato separatamente (non solo la media delle due), per poter confrontare "pace nostro" vs "pace avversario" nello stesso incontro.
 
 ## Serie A1 femminile (legabasketfemminile.it) — ✅ dati completi, formula applicabile
 
 - Il calendario (`Calendar.aspx?ID=313`) è HTML statico (nessun JS necessario, `requests` puro basta) e contiene, per ogni partita, un link `MatchStats.aspx?ID=313&MID={matchId}` — un **tabellino per singola partita**.
-- Ogni `MatchStats.aspx` ha, per squadra, una riga `TOTALI DI SQUADRA` con: tiri da 2 (realizzati/tentati/%), tiri da 3 (realizzati/tentati/%), tiri liberi (realizzati/tentati/%), rimbalzi offensivi/difensivi/totali, palle perse/recuperate, assist, valutazione — **esattamente i 4 campi necessari alla formula del pace**, già aggregati a livello di squadra (non serve nemmeno sommare le giocatrici).
+- Ogni `MatchStats.aspx` ha, per squadra, una riga `TOTALI DI SQUADRA` con: tiri da 2 (realizzati/tentati/%), tiri da 3 (realizzati/tentati/%), tiri liberi (realizzati/tentati/%), rimbalzi offensivi/difensivi/totali, palle perse/recuperate, assist, valutazione — **tutti i campi necessari sia alla formula semplice che a quella avanzata**, già aggregati a livello di squadra (non serve nemmeno sommare le giocatrici).
 - Punteggio finale e parziali per quarto sono in campi HTML con id stabili (`Content_L_Punteggio_Casa/Fuori`, `Content_L_Quarti`), quindi anche l'eventuale overtime è rilevabile in modo affidabile.
 - La stagione 2025/26 di Serie A1 (competizione ID 313) ha **110 partite** (11 squadre, doppio girone) — coerente con l'elenco squadre del sito.
 - **Nessun ostacolo tecnico**: niente postback ASP.NET da gestire per queste pagine, niente rate limit nel `robots.txt` (assente/404).
@@ -39,27 +39,29 @@ Testato su **due piattaforme diverse** (come richiesto), entrambe con robots.txt
 
 Lo scraper (`scripts/lbf_scraper.py::build_full_season_dataset`) scarica **ogni partita della regular season una sola volta** (110 partite, 110 richieste totali invece di 1100 se fatto per squadra) e produce due righe per partita — una per prospettiva squadra — con il pace **calcolato separatamente per ciascuna squadra**.
 
-- `data/pace_A1_2025-26_all_teams.csv` — dataset master: 220 righe (110 partite × 2 squadre), colonne `match_id, date, giornata, team, opponent, is_home, team_score, opp_score, result, team_pace, opp_pace, game_pace`.
+- `data/pace_A1_2025-26_all_teams.csv` — dataset master: 220 righe (110 partite × 2 squadre), colonne `match_id, date, giornata, team, opponent, is_home, team_score, opp_score, result, n_periods`, i box score grezzi (`team_fga, team_fgm, team_fta, team_oreb, team_dreb, team_tov` e le stesse per `opp_*`) e i pace derivati (`team_pace, opp_pace, game_pace`). Aver salvato anche i campi grezzi evita di dover ri-scrapare se in futuro si vuole ritoccare ancora la formula.
 - Verifica di correttezza: incrociando le righe casa/ospite della stessa partita, `team_pace` di una squadra coincide esattamente con `opp_pace` dell'altra in tutte le 110 partite (0 mismatch).
 
 I grafici sono organizzati in sottocartelle dentro `data/`:
 
-- `data/pace_per_team/pace_<Squadra>_A1_2025-26.png` × 11 — pace nel tempo (per giornata) colorato per W/L, uno per squadra.
-- `data/pace_vs_opponent/pace_scatter_<Squadra>.png` × 11 — scatter pace-propria vs pace-avversaria per ogni partita di regular season, colorato per esito, con riferimento diagonale y=x. Es. Schio ha chiuso la regular season 20-0 (tutti i punti sono vittorie), pace medio stagionale 71.2 (min 65.9, max 80.2); Venezia mostra invece qualche sconfitta concentrata nelle partite a pace più basso/medio.
-- `data/summary/pace_vs_winrate.png` — scatter a livello di squadra: pace medio stagionale (x) vs win rate (y), un punto per squadra con etichetta. Non emerge una relazione lineare forte tra pace e vittorie: Schio vince tutto con un pace medio-basso (71.5), mentre People Strategy Roseto e RMB Brixia hanno pace alto (>75) ma win rate basso (40% e 15%) — sembra più una questione di qualità della squadra che di ritmo di gioco, osservazione visiva su 11 punti, non un'analisi statistica.
-- `data/pace_deviation/pace_deviation_<Squadra>.png` × 11 — variante dello scatter precedente ma "centrata sulle medie": x = pace della squadra meno il **proprio** pace medio stagionale, y = pace dell'avversaria meno **il pace medio stagionale dell'avversaria stessa** (ognuna rispetto alla propria media). L'origine (0,0) rappresenta "entrambe hanno giocato esattamente al proprio ritmo abituale", utile per vedere a colpo d'occhio se le vittorie/sconfitte si concentrano quando la squadra accelera/rallenta rispetto al proprio standard, indipendentemente da quanto sia "veloce" l'avversaria in assoluto. Range assi condiviso (-10/+10, simmetrico per costruzione).
+- `data/pace_per_team/pace_<Squadra>_A1_2025-26.png` × 11 — pace nel tempo (per giornata) colorato per W/L, uno per squadra. Asse y condiviso (62-83), con media squadra e media campionato (72.4) annotate.
+- `data/pace_vs_opponent/pace_scatter_<Squadra>.png` × 11 — scatter pace-propria vs pace-avversaria per ogni partita di regular season, colorato per esito. Es. Schio ha chiuso la regular season 20-0, pace medio stagionale 71.0 (min 65.4, max 79.7).
+- `data/summary/pace_vs_winrate.png` — scatter a livello di squadra: pace medio stagionale (x) vs win rate (y), un punto per squadra con etichetta. Non emerge una relazione lineare forte tra pace e vittorie: Schio vince tutto con un pace medio-basso (71.2), mentre People Strategy Roseto e RMB Brixia hanno pace alto (>74.5) ma win rate basso (40% e 15%).
+- `data/summary/pace_bar.png` — bar chart orizzontale, una barra per squadra, ordinato per pace medio decrescente con il valore annotato: da Roseto (75.0) a Broni (69.0). Asse x fisso 60-80.
+- `data/summary/oppdev_vs_winrate.png` — scatter a livello di squadra: quanto in media le avversarie si scostano dal **proprio** pace abituale contro quella squadra (x, positivo = le fa correre più del loro standard) vs win rate (y). Le squadre a fondo classifica (Battipaglia, Brixia) tendono a stare a destra (fanno correre le avversarie sopra lo standard), le migliori (Schio, Campobasso, San Giovanni) a sinistra o vicino allo zero — osservazione visiva, non una correlazione testata statisticamente.
+- `data/pace_deviation/pace_deviation_<Squadra>.png` × 11 — scatter "centrato sulle medie": x = pace della squadra meno il **proprio** pace medio stagionale, y = pace dell'avversaria meno **il pace medio stagionale dell'avversaria stessa**. Origine (0,0) = entrambe al proprio ritmo abituale. Bordi annotati con lettura discorsiva ("Le facciamo correre" / "Le rallentiamo" / "Ci rallentano" / "Ci fanno correre"), punti verdi/rossi per W/L, e le partite contro le due finaliste (Schio/Venezia) etichettate esplicitamente. Range assi condiviso (-10/+10).
 - `data/archive/` — output della prima proof of concept a squadra singola (Alama), superata dal dataset completo.
 - `data/logs/` — log testuali delle sessioni di scraping/plotting.
 
-| Metrica | Valore |
+| Metrica (formula avanzata, 220 righe) | Valore |
 |---|---|
-| Pace medio stagione | 74.2 |
-| Pace minimo | 67.9 (vs Geas Sesto San Giovanni, 15/02/2026) |
-| Pace massimo | 83.0 (vs RMB Brixia Basket San Paolo, fuori casa) |
-| Pace medio nelle vittorie (9 partite) | 73.7 |
-| Pace medio nelle sconfitte (11 partite) | 74.5 |
+| Pace medio campionato | 72.4 |
+| Pace minimo | 62.9 |
+| Pace massimo | 82.5 |
+| Pace medio nelle vittorie | 72.3 |
+| Pace medio nelle sconfitte | 72.4 |
 
-I valori sono in un range plausibile per il basket europeo femminile (tipicamente 65-85 possessi/40'), buon segnale che la formula e il parsing sono corretti. La differenza pace vittorie/sconfitte è minima e su un campione di 20 partite non è indicativa di nulla — semplicemente non ci si aspettava un pattern forte, era solo un controllo di sanità dei numeri.
+I valori sono in un range plausibile per il basket europeo femminile (tipicamente 65-85 possessi/40'). La differenza pace vittorie/sconfitte è pressoché nulla a livello di campionato — coerente con quanto visto nello scatter pace-vs-winrate: il pace da solo non spiega chi vince, conta più la qualità della squadra.
 
 ## Raccomandazione
 

@@ -44,13 +44,13 @@ def plot_team_pace_deviation(df_team: pd.DataFrame, out_path: str, team_label: s
     ax.axvline(0, color="black", linestyle=":", linewidth=1, alpha=0.5)
 
     edge_pad = (hi - lo) * 0.03
-    ax.text(0, hi - edge_pad, "Le facciamo\ncorrere", color="#1f4ea1", alpha=0.45,
+    ax.text(0, hi - edge_pad, "Loro corrono\ndi più", color="#1f4ea1", alpha=0.45,
              fontsize=14, ha="center", va="top", zorder=1)
-    ax.text(0, lo + edge_pad, "Le\nrallentiamo", color="#1f4ea1", alpha=0.45,
+    ax.text(0, lo + edge_pad, "Loro corrono\ndi meno", color="#1f4ea1", alpha=0.45,
              fontsize=14, ha="center", va="bottom", zorder=1)
-    ax.text(lo + edge_pad, 0, "Ci\nrallentano", color="#1f4ea1", alpha=0.45,
+    ax.text(lo + edge_pad, 0, "Noi corriamo\ndi meno", color="#1f4ea1", alpha=0.45,
              fontsize=14, ha="left", va="center", ma="center", zorder=1)
-    ax.text(hi - edge_pad, 0, "Ci fanno\ncorrere", color="#1f4ea1", alpha=0.45,
+    ax.text(hi - edge_pad, 0, "Noi corriamo\ndi più", color="#1f4ea1", alpha=0.45,
              fontsize=14, ha="right", va="center", ma="center", zorder=1)
 
     sns.scatterplot(data=df_team, x="team_dev", y="opp_dev", hue="result",
@@ -89,7 +89,7 @@ def main_all(master_csv: str, out_dir: str = "data/pace_deviation"):
     team_avg_lookup = df.groupby("team")["team_pace"].mean().to_dict()
     for team in sorted(df["team"].unique()):
         df_team = df[df["team"] == team]
-        out_path = f"{out_dir}/pace_deviation_{slugify(team)}.png"
+        out_path = f"{out_dir}/pace_deviation_{slugify(team_alias(team))}.png"
         plot_team_pace_deviation(df_team, out_path, team, team_avg_lookup)
         print(f"{team}: {len(df_team)} partite -> {out_path}")
 

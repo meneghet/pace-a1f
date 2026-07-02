@@ -56,7 +56,7 @@ def main_all(master_csv: str, out_dir: str = "data/pace_vs_opponent"):
     df = pd.read_csv(master_csv)
     for team in sorted(df["team"].unique()):
         df_team = df[df["team"] == team]
-        out_path = f"{out_dir}/pace_scatter_{slugify(team)}.png"
+        out_path = f"{out_dir}/pace_scatter_{slugify(team_alias(team))}.png"
         plot_team_pace_scatter(df_team, out_path, team)
         print(f"{team}: {len(df_team)} partite -> {out_path}")
 
