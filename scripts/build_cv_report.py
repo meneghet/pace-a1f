@@ -204,7 +204,7 @@ def main():
       stagionale, in ordinata quanto l'avversaria si è scostata dal proprio. Origine (0,0) =
       entrambe al ritmo abituale.
     </p>
-    <div class="pair">
+    <div class="pair stacked">
       <div>
         <p class="team-label">Schio</p>
         <figure><img src="data:image/png;base64,{imgs['deviation_schio']}" alt="Scostamento dal pace medio, Schio vs avversaria" /></figure>
