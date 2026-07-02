@@ -23,7 +23,7 @@ def build_team_summary(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def plot(summary: pd.DataFrame, out_path: str):
-    sns.set_theme(style="whitegrid")
+    sns.set_theme(style="whitegrid", font_scale=1.25)
     fig, ax = plt.subplots(figsize=(9, 7))
     sns.scatterplot(data=summary, x="avg_pace", y="win_rate", s=110,
                      color="#264653", ax=ax, zorder=3)
@@ -39,7 +39,7 @@ def plot(summary: pd.DataFrame, out_path: str):
     ax.set_ylabel("Win rate")
     ax.yaxis.set_major_formatter(lambda v, _: f"{v:.0%}")
     fig.tight_layout()
-    fig.savefig(out_path, dpi=150)
+    fig.savefig(out_path, dpi=150, bbox_inches="tight")
     plt.close(fig)
 
 

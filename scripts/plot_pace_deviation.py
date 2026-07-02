@@ -37,7 +37,7 @@ def plot_team_pace_deviation(df_team: pd.DataFrame, out_path: str, team_label: s
     df_team["team_dev"] = df_team["game_pace"] - team_avg
     df_team["opp_dev"] = df_team["game_pace"] - df_team["opponent"].map(team_avg_lookup)
 
-    sns.set_theme(style="whitegrid")
+    sns.set_theme(style="whitegrid", font_scale=1.25)
     fig, ax = plt.subplots(figsize=(6.5, 6.5))
 
     lo, hi = DEV_RANGE
@@ -74,7 +74,7 @@ def plot_team_pace_deviation(df_team: pd.DataFrame, out_path: str, team_label: s
     ax.set_ylabel("Pace partita − media avversaria")
     ax.legend(loc="upper left")
     fig.tight_layout()
-    fig.savefig(out_path, dpi=150)
+    fig.savefig(out_path, dpi=150, bbox_inches="tight")
     plt.close(fig)
 
 

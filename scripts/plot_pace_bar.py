@@ -19,7 +19,7 @@ def build_team_avg_pace(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def plot(summary: pd.DataFrame, out_path: str):
-    sns.set_theme(style="whitegrid")
+    sns.set_theme(style="whitegrid", font_scale=1.25)
     fig, ax = plt.subplots(figsize=(8, 6))
 
     order = summary.iloc[::-1]  # highest pace at the top of a barh chart
@@ -34,7 +34,7 @@ def plot(summary: pd.DataFrame, out_path: str):
     ax.set_xlabel("Pace medio stagionale (possessi stimati / 40')")
     ax.set_ylabel("")
     fig.tight_layout()
-    fig.savefig(out_path, dpi=150)
+    fig.savefig(out_path, dpi=150, bbox_inches="tight")
     plt.close(fig)
 
 

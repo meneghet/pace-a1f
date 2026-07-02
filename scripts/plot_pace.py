@@ -12,7 +12,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-PALETTE = {"W": "#2a9d8f", "L": "#e76f51"}
+PALETTE = {"W": "green", "L": "red"}
 
 # Short aliases for compact legends/axes/titles, loaded from team_aliases.json
 # (sits next to this script). Full names stay in the data and in filenames;
@@ -37,7 +37,7 @@ def plot_team_pace(df_team: pd.DataFrame, out_path: str, team_label: str, league
     df_team = df_team.sort_values("giornata").reset_index(drop=True)
     alias = team_alias(team_label)
 
-    sns.set_theme(style="whitegrid")
+    sns.set_theme(style="whitegrid", font_scale=1.25)
     fig, ax = plt.subplots(figsize=(10, 5))
     sns.scatterplot(data=df_team, x="giornata", y="game_pace", hue="result",
                      palette=PALETTE, s=70, ax=ax)
@@ -51,10 +51,10 @@ def plot_team_pace(df_team: pd.DataFrame, out_path: str, team_label: str, league
     ax.set_ylim(*Y_RANGE)
     ax.set_title(f"Pace per partita — {alias}")
     ax.set_xlabel("Giornata")
-    ax.set_ylabel("Pace di partita (media squadre, possessi stimati / 40')")
-    ax.legend(loc="best")
+    ax.set_ylabel("Pace di partita\n(possessi stimati / 40')")
+    ax.legend(loc="upper left", bbox_to_anchor=(1.01, 1), borderaxespad=0.)
     fig.tight_layout()
-    fig.savefig(out_path, dpi=150)
+    fig.savefig(out_path, dpi=150, bbox_inches="tight")
     plt.close(fig)
 
 

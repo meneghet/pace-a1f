@@ -19,7 +19,7 @@ from plot_pace import PALETTE, slugify, team_alias
 
 def plot_team_pace_scatter(df_team: pd.DataFrame, out_path: str, team_label: str):
     alias = team_alias(team_label)
-    sns.set_theme(style="whitegrid")
+    sns.set_theme(style="whitegrid", font_scale=1.25)
     fig, ax = plt.subplots(figsize=(6.5, 6.5))
 
     lo = df_team["game_pace"].min() - 2
@@ -41,7 +41,7 @@ def plot_team_pace_scatter(df_team: pd.DataFrame, out_path: str, team_label: str
     ax.set_ylabel("Pace avversaria")
     ax.legend(loc="upper left")
     fig.tight_layout()
-    fig.savefig(out_path, dpi=150)
+    fig.savefig(out_path, dpi=150, bbox_inches="tight")
     plt.close(fig)
 
 

@@ -21,7 +21,7 @@ def clean_pace_over_time(df_team, team, out_path, league_avg_pace):
     df_team = df_team.sort_values("giornata").reset_index(drop=True)
     alias = team_alias(team)
 
-    sns.set_theme(style="whitegrid")
+    sns.set_theme(style="whitegrid", font_scale=1.25)
     fig, ax = plt.subplots(figsize=(9, 4.2))
     sns.scatterplot(data=df_team, x="giornata", y="game_pace", hue="result",
                      palette=PALETTE, s=80, ax=ax)
@@ -36,9 +36,9 @@ def clean_pace_over_time(df_team, team, out_path, league_avg_pace):
     ax.set_title(f"Pace per partita — {alias}")
     ax.set_xlabel("Giornata")
     ax.set_ylabel("Pace di partita")
-    ax.legend(loc="best")
+    ax.legend(loc="upper left", bbox_to_anchor=(1.01, 1), borderaxespad=0.)
     fig.tight_layout()
-    fig.savefig(out_path, dpi=150)
+    fig.savefig(out_path, dpi=150, bbox_inches="tight")
     plt.close(fig)
 
 

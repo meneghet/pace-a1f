@@ -16,7 +16,7 @@ VENEZIA = "Umana Reyer Venezia"
 
 
 def plot(finals: pd.DataFrame, season_avg: dict, out_path: str):
-    sns.set_theme(style="whitegrid")
+    sns.set_theme(style="whitegrid", font_scale=1.25)
     fig, ax = plt.subplots(figsize=(8, 5.5))
 
     ylo, yhi = 55, 78
@@ -44,7 +44,7 @@ def plot(finals: pd.DataFrame, season_avg: dict, out_path: str):
     ax.set_ylabel("Pace di partita (possessi stimati / 40')")
     ax.legend(loc="upper right")
     fig.tight_layout()
-    fig.savefig(out_path, dpi=150)
+    fig.savefig(out_path, dpi=150, bbox_inches="tight")
     plt.close(fig)
 
 
