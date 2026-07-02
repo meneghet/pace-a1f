@@ -10,6 +10,7 @@ IMAGES = {
     "timeline_venezia": "data/cv_report/pace_over_time_venezia_clean.png",
     "deviation_schio": "data/pace_deviation/pace_deviation_Schio.png",
     "deviation_venezia": "data/pace_deviation/pace_deviation_Venezia.png",
+    "finali": "data/finals/pace_finali.png",
 }
 
 
@@ -214,6 +215,18 @@ def main():
         <figure><img src="data:image/png;base64,{imgs['deviation_venezia']}" alt="Scostamento dal pace medio, Venezia vs avversaria" /></figure>
       </div>
     </div>
+  </section>
+
+  <section>
+    <p class="chip">04 — COM'È FINITA</p>
+    <h2>Il pace nella finale scudetto</h2>
+    <p class="caption">
+      Venezia elimina Schio (unica sconfitta stagionale) in Gara 1, sul ritmo più lento delle tre
+      partite — sotto la media stagionale di entrambe. Schio chiude la serie 2-1 vincendo Gara 2 e
+      Gara 3 su un pace vicino al proprio standard, ma sempre più lento di quello abituale di
+      Venezia: la finale si è giocata su ritmi imposti da Schio, non da Venezia.
+    </p>
+    <figure><img src="data:image/png;base64,{imgs['finali']}" alt="Pace nelle 3 partite della finale Schio-Venezia" /></figure>
   </section>
 
   <footer>

@@ -70,6 +70,21 @@ I grafici sono organizzati in sottocartelle dentro `data/`:
 
 I valori sono in un range plausibile per il basket europeo femminile (tipicamente 65-85 possessi/40'). Non è più riportato un confronto "pace medio nelle vittorie vs nelle sconfitte": dato che `game_pace` è lo stesso identico numero per entrambe le squadre di ogni partita, e ogni partita genera esattamente una riga W e una riga L con quel valore, le due medie sono uguali **per costruzione** (72.36 in entrambi i casi) — non è un finding, è una tautologia della metrica. La domanda "il pace aiuta a vincere?" resta comunque risposta dallo scatter pace-vs-winrate a livello di squadra: il pace da solo non spiega chi vince, conta più la qualità della squadra.
 
+## Addendum — la finale scudetto (playoff, fuori dal dataset master)
+
+Le 3 partite della finale (Famila Wuber Schio vs Umana Reyer Venezia, le due finaliste già usate come caso di studio) **non fanno parte** di `pace_A1_2025-26_all_teams.csv`, che copre solo la regular season. Il tabellone playoff di `legabasketfemminile.it` non ha una querystring statica come il calendario di regular season: sta dietro un postback ASP.NET (tab "Play Off" su `Calendar.aspx`), individuato una tantum con Playwright (`scripts/explore_playoff.py`) per recuperare i `MID` delle partite.
+
+- `scripts/finals_pace.py` — scarica i 3 tabellini (MID hardcoded, individuati una volta sola) e calcola `game_pace` con la stessa formula della pipeline principale, salva in `data/finals/finals_pace.csv`.
+- `scripts/plot_finals_pace.py` → `data/finals/pace_finali.png` — bar chart delle 3 partite con le medie stagionali di Schio (71.0) e Venezia (74.2) come riferimento.
+
+| Gara | Data | Risultato | Vince | Pace |
+|---|---|---|---|---|
+| 1 | 20/04/2026 | Schio 60 - 71 Venezia | Venezia | 68.6 |
+| 2 | 23/04/2026 | Venezia 53 - 74 Schio | Schio | 71.0 |
+| 3 | 26/04/2026 | Schio 70 - 64 Venezia | Schio | 70.4 |
+
+Tutte e 3 le partite si sono giocate **sotto la media stagionale di Venezia** (74.2) — la squadra più veloce delle due finaliste non è mai riuscita a imporre il proprio ritmo abituale in finale. Venezia vince l'unica gara giocata anche sotto la media stagionale di Schio (Gara 1, 68.6, la più lenta delle tre); Schio chiude la serie 2-1 vincendo le altre due su un pace vicino al proprio standard (71.0 e 70.4). Con solo 3 partite non si può generalizzare, ma l'osservazione va nella stessa direzione già vista nello scatter pace-vs-winrate: chi ha vinto il campionato (Schio) lo ha fatto giocando al ritmo che preferisce, non a quello degli avversari.
+
 ## Raccomandazione
 
 Per avere presto un dataset "pace per partita + W/L" solido e completo, conviene partire da **Serie A1 (o A2, stessa piattaforma)**: i dati ci sono già, formula applicabile al 100%, nessun blocco tecnico. Per la Serie B femminile, l'opzione realistica nel breve termine è costruire un dataset con solo risultato/punteggio (niente pace) a meno di non trovare un girone/stagione dove i collaboratori locali compilano davvero il box score su playbasket.it — andrebbe verificato caso per caso, girone per girone, prima di investire tempo nello scraper.

@@ -21,6 +21,14 @@ femminile 2025/26, da legabasketfemminile.it. Formula da hackastat.eu.
    Derthona, San Giovanni, Brixia, ecc.), letti da `plot_pace.py::team_alias()`.
    I nomi file usano l'alias; i dati nel CSV usano il nome ufficiale completo.
 
+## Addendum — finale playoff
+
+`scripts/finals_pace.py` + `scripts/plot_finals_pace.py` → `data/finals/`:
+pace delle 3 partite della finale scudetto (Schio-Venezia), fuori dal CSV
+master (playoff, non regular season). I `MID` delle partite sono hardcoded
+nello script, individuati una tantum via postback ASP.NET con Playwright
+(`scripts/explore_playoff.py`, tab "Play Off" su `Calendar.aspx`).
+
 ## Report
 
 - `report.md` — report tecnico completo (fonti valutate, formula, findings su
