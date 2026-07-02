@@ -200,8 +200,8 @@ def main():
     <p class="chip">03 — CASO DI STUDIO: LE DUE FINALISTE</p>
     <h2>Chi si scosta dal proprio ritmo abituale</h2>
     <p class="caption">
-      Ogni punto è una partita: in ascissa quanto la squadra si è scostata dal proprio pace medio
-      stagionale, in ordinata quanto l'avversaria si è scostata dal proprio. Origine (0,0) =
+      Ogni punto è una partita: sulla x quanto la squadra si è scostata dal proprio pace medio
+      stagionale, sulla y quanto l'avversaria si è scostata dal proprio. Origine (0,0) =
       entrambe al ritmo abituale.
     </p>
     <div class="pair stacked">

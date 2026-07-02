@@ -66,6 +66,9 @@ def plot_team_pace_deviation(df_team: pd.DataFrame, out_path: str, team_label: s
     ax.set_xlim(lo, hi)
     ax.set_ylim(lo, hi)
     ax.set_aspect("equal")
+    tick_fmt = lambda v, _: "0" if v == 0 else f"{v:+.1f}"
+    ax.xaxis.set_major_formatter(tick_fmt)
+    ax.yaxis.set_major_formatter(tick_fmt)
     ax.set_title(f"Scostamento pace dalla propria media — {alias}\n(regular season)")
     ax.set_xlabel(f"Pace partita − media {alias} ({team_avg:.1f})")
     ax.set_ylabel("Pace partita − media avversaria")
