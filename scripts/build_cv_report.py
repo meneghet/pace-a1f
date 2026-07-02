@@ -8,8 +8,6 @@ IMAGES = {
     "bar": "data/summary/pace_bar.png",
     "timeline_schio": "data/cv_report/pace_over_time_schio_clean.png",
     "timeline_venezia": "data/cv_report/pace_over_time_venezia_clean.png",
-    "scatter_schio": "data/cv_report/pace_vs_opponent_schio_clean.png",
-    "scatter_venezia": "data/cv_report/pace_vs_opponent_venezia_clean.png",
     "deviation_schio": "data/pace_deviation/pace_deviation_Schio.png",
     "deviation_venezia": "data/pace_deviation/pace_deviation_Venezia.png",
     "oppdev": "data/summary/oppdev_vs_winrate.png",
@@ -201,30 +199,11 @@ def main():
 
   <section>
     <p class="chip">03 — CASO DI STUDIO: LE DUE FINALISTE</p>
-    <h2>Il loro ritmo contro quello delle avversarie</h2>
-    <p class="caption">
-      Ogni punto è una partita: pace della squadra in ascissa, pace dell'avversaria in ordinata.
-      Sopra la diagonale l'avversaria ha corso più della squadra in analisi, sotto è il contrario.
-    </p>
-    <div class="pair">
-      <div>
-        <p class="team-label">Schio</p>
-        <figure><img src="data:image/png;base64,{imgs['scatter_schio']}" alt="Pace di Schio vs pace dell'avversaria, partita per partita" /></figure>
-      </div>
-      <div>
-        <p class="team-label">Venezia</p>
-        <figure><img src="data:image/png;base64,{imgs['scatter_venezia']}" alt="Pace di Venezia vs pace dell'avversaria, partita per partita" /></figure>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <p class="chip">04 — CASO DI STUDIO: LE DUE FINALISTE</p>
     <h2>Chi si scosta dal proprio ritmo abituale</h2>
     <p class="caption">
-      Stesso confronto, ma ogni asse è centrato sulla media stagionale di chi gioca (non il pace
-      assoluto): mostra se la squadra e l'avversaria hanno corso più o meno del loro standard in
-      quella partita.
+      Ogni punto è una partita: in ascissa quanto la squadra si è scostata dal proprio pace medio
+      stagionale, in ordinata quanto l'avversaria si è scostata dal proprio. Origine (0,0) =
+      entrambe al ritmo abituale.
     </p>
     <div class="pair">
       <div>
@@ -239,7 +218,7 @@ def main():
   </section>
 
   <section>
-    <p class="chip">05 — TUTTO IL CAMPIONATO</p>
+    <p class="chip">04 — TUTTO IL CAMPIONATO</p>
     <h2>Imporre il ritmo paga?</h2>
     <p class="caption">
       Per ogni squadra: quanto in media le avversarie si allontanano dal proprio pace abituale

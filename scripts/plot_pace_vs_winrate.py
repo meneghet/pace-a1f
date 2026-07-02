@@ -16,7 +16,7 @@ def build_team_summary(df: pd.DataFrame) -> pd.DataFrame:
     summary = df.groupby("team").agg(
         games=("result", "size"),
         wins=("result", lambda s: (s == "W").sum()),
-        avg_pace=("team_pace", "mean"),
+        avg_pace=("game_pace", "mean"),
     ).reset_index()
     summary["win_rate"] = summary["wins"] / summary["games"]
     return summary

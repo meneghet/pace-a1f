@@ -1,11 +1,13 @@
-"""Scatter: how much the team played above/below its OWN average pace (x)
-vs how much the opponent played above/below the OPPONENT's own average pace
-(y), one point per regular-season game, colored by W/L.
+"""Scatter: how much the game's pace (single shared value, see game_pace in
+scripts/pace.py) deviated from each side's OWN average pace, one point per
+regular-season game, colored by W/L.
 
-x = team_pace - team_avg_pace
-y = opp_pace - opp_avg_pace
-Each side's deviation is measured against its own season-average pace, so
-the origin (0,0) means "both sides played exactly at their usual pace".
+x = game_pace - team_avg_pace
+y = game_pace - opp_avg_pace
+Each side's deviation is measured against its own season-average game_pace,
+so the origin (0,0) means "both sides played exactly at their usual pace".
+x and y differ only because the two baselines (team_avg vs opp_avg) differ,
+not because the game itself had two different paces.
 """
 
 import sys
@@ -32,8 +34,8 @@ def plot_team_pace_deviation(df_team: pd.DataFrame, out_path: str, team_label: s
     team_avg = team_avg_lookup[team_label]
 
     df_team = df_team.copy()
-    df_team["team_dev"] = df_team["team_pace"] - team_avg
-    df_team["opp_dev"] = df_team["opp_pace"] - df_team["opponent"].map(team_avg_lookup)
+    df_team["team_dev"] = df_team["game_pace"] - team_avg
+    df_team["opp_dev"] = df_team["game_pace"] - df_team["opponent"].map(team_avg_lookup)
 
     sns.set_theme(style="whitegrid")
     fig, ax = plt.subplots(figsize=(6.5, 6.5))
@@ -75,7 +77,7 @@ def plot_team_pace_deviation(df_team: pd.DataFrame, out_path: str, team_label: s
 
 def main(master_csv: str, team_query: str, out_path: str):
     df = pd.read_csv(master_csv)
-    team_avg_lookup = df.groupby("team")["team_pace"].mean().to_dict()
+    team_avg_lookup = df.groupby("team")["game_pace"].mean().to_dict()
     df_team = df[df["team"].str.contains(team_query, case=False)]
     if df_team.empty:
         raise ValueError(f"No rows found for team matching {team_query!r}")
@@ -86,7 +88,7 @@ def main(master_csv: str, team_query: str, out_path: str):
 
 def main_all(master_csv: str, out_dir: str = "data/pace_deviation"):
     df = pd.read_csv(master_csv)
-    team_avg_lookup = df.groupby("team")["team_pace"].mean().to_dict()
+    team_avg_lookup = df.groupby("team")["game_pace"].mean().to_dict()
     for team in sorted(df["team"].unique()):
         df_team = df[df["team"] == team]
         out_path = f"{out_dir}/pace_deviation_{slugify(team_alias(team))}.png"

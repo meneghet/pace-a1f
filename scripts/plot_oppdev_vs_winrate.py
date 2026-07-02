@@ -1,7 +1,7 @@
 """Team-level scatter: average opponent pace deviation (x) vs win rate (y),
 one point per team, labeled with the team alias.
 
-opp_dev per game = opp_pace - opp's own season-average pace, i.e. how much
+opp_dev per game = game_pace - opp's own season-average pace, i.e. how much
 we made that opponent stray from its usual pace. Averaged across all of a
 team's games, positive x means "on average we push opponents above their
 own normal pace".
@@ -18,9 +18,9 @@ from plot_pace import team_alias
 
 
 def build_team_summary(df: pd.DataFrame) -> pd.DataFrame:
-    team_avg_lookup = df.groupby("team")["team_pace"].mean().to_dict()
+    team_avg_lookup = df.groupby("team")["game_pace"].mean().to_dict()
     df = df.copy()
-    df["opp_dev"] = df["opp_pace"] - df["opponent"].map(team_avg_lookup)
+    df["opp_dev"] = df["game_pace"] - df["opponent"].map(team_avg_lookup)
 
     summary = df.groupby("team").agg(
         games=("result", "size"),

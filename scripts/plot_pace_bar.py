@@ -13,7 +13,7 @@ from plot_pace import team_alias
 
 
 def build_team_avg_pace(df: pd.DataFrame) -> pd.DataFrame:
-    summary = df.groupby("team")["team_pace"].mean().reset_index(name="avg_pace")
+    summary = df.groupby("team")["game_pace"].mean().reset_index(name="avg_pace")
     summary["alias"] = summary["team"].apply(team_alias)
     return summary.sort_values("avg_pace", ascending=False).reset_index(drop=True)
 

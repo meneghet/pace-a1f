@@ -1,6 +1,6 @@
-"""One-off: clean variants (no mean-reference lines) of two charts, for a
-minimal CV-attachment report. Reuses the master dataset; does not touch the
-main pipeline outputs.
+"""One-off: clean variant (no mean-reference lines) of the pace-over-time
+chart, for a minimal CV-attachment report. Reuses the master dataset; does
+not touch the main pipeline outputs.
 """
 
 import os
@@ -37,30 +37,6 @@ def clean_pace_over_time(df_team, team, out_path):
     plt.close(fig)
 
 
-def clean_pace_vs_opponent(df_team, team, out_path):
-    alias = team_alias(team)
-    sns.set_theme(style="whitegrid")
-    fig, ax = plt.subplots(figsize=(6, 6))
-
-    lo = min(df_team["team_pace"].min(), df_team["opp_pace"].min()) - 2
-    hi = max(df_team["team_pace"].max(), df_team["opp_pace"].max()) + 2
-    ax.plot([lo, hi], [lo, hi], color="grey", linestyle="--", linewidth=1, alpha=0.6)
-
-    sns.scatterplot(data=df_team, x="team_pace", y="opp_pace", hue="result",
-                     palette=PALETTE, s=90, ax=ax)
-
-    ax.set_xlim(lo, hi)
-    ax.set_ylim(lo, hi)
-    ax.set_aspect("equal")
-    ax.set_title(f"Pace {alias} vs pace avversaria")
-    ax.set_xlabel(f"Pace {alias}")
-    ax.set_ylabel("Pace avversaria")
-    ax.legend(loc="upper left")
-    fig.tight_layout()
-    fig.savefig(out_path, dpi=150)
-    plt.close(fig)
-
-
 def main():
     os.makedirs(OUT_DIR, exist_ok=True)
     df = pd.read_csv("data/pace_A1_2025-26_all_teams.csv")
@@ -69,7 +45,6 @@ def main():
         df_team = df[df["team"] == team]
         alias_slug = team_alias(team).lower().replace(" ", "_")
         clean_pace_over_time(df_team, team, f"{OUT_DIR}/pace_over_time_{alias_slug}_clean.png")
-        clean_pace_vs_opponent(df_team, team, f"{OUT_DIR}/pace_vs_opponent_{alias_slug}_clean.png")
     print(f"Saved clean charts to {OUT_DIR}/")
 
 

@@ -1,5 +1,10 @@
 """Scatter: team's own pace vs opponent's pace, one point per regular-season
 game, colored by W/L. For a specific team from the master dataset.
+
+Pace is a single value per game (average of the two teams' estimates, see
+scripts/pace.py / game_pace column) — both teams necessarily play the same
+number of possessions. So x and y are the same column and every point falls
+exactly on the diagonal; kept for consistency with the other per-team charts.
 """
 
 import sys
@@ -17,15 +22,15 @@ def plot_team_pace_scatter(df_team: pd.DataFrame, out_path: str, team_label: str
     sns.set_theme(style="whitegrid")
     fig, ax = plt.subplots(figsize=(6.5, 6.5))
 
-    lo = min(df_team["team_pace"].min(), df_team["opp_pace"].min()) - 2
-    hi = max(df_team["team_pace"].max(), df_team["opp_pace"].max()) + 2
+    lo = df_team["game_pace"].min() - 2
+    hi = df_team["game_pace"].max() + 2
     ax.plot([lo, hi], [lo, hi], color="grey", linestyle="--", linewidth=1, alpha=0.6)
 
-    mean_pace = df_team["team_pace"].mean()
+    mean_pace = df_team["game_pace"].mean()
     ax.axvline(mean_pace, color="black", linestyle=":", linewidth=1.2, alpha=0.7,
                label=f"pace medio {alias}: {mean_pace:.1f}")
 
-    sns.scatterplot(data=df_team, x="team_pace", y="opp_pace", hue="result",
+    sns.scatterplot(data=df_team, x="game_pace", y="game_pace", hue="result",
                      palette=PALETTE, s=90, ax=ax)
 
     ax.set_xlim(lo, hi)
@@ -49,7 +54,7 @@ def main(master_csv: str, team_query: str, out_path: str):
     plot_team_pace_scatter(df_team, out_path, team_label)
     print(f"{team_label}: {len(df_team)} partite -> {out_path}")
     print(df_team[["giornata", "opponent", "is_home", "team_score", "opp_score",
-                    "result", "team_pace", "opp_pace"]].sort_values("giornata"))
+                    "result", "game_pace"]].sort_values("giornata"))
 
 
 def main_all(master_csv: str, out_dir: str = "data/pace_vs_opponent"):
