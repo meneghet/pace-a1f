@@ -36,7 +36,7 @@ def clean_pace_over_time(df_team, team, out_path, league_avg_pace):
     ax.set_title(f"Pace per partita — {alias}")
     ax.set_xlabel("Giornata")
     ax.set_ylabel("Pace di partita")
-    ax.legend(loc="upper left")
+    ax.legend(loc="best")
     fig.tight_layout()
     fig.savefig(out_path, dpi=150)
     plt.close(fig)

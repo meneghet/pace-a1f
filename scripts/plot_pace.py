@@ -52,7 +52,7 @@ def plot_team_pace(df_team: pd.DataFrame, out_path: str, team_label: str, league
     ax.set_title(f"Pace per partita — {alias}")
     ax.set_xlabel("Giornata")
     ax.set_ylabel("Pace di partita (media squadre, possessi stimati / 40')")
-    ax.legend(loc="upper left")
+    ax.legend(loc="best")
     fig.tight_layout()
     fig.savefig(out_path, dpi=150)
     plt.close(fig)
