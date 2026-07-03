@@ -5,27 +5,30 @@ eyebrow: "Progetto personale — analisi dati sportivi"
 title: "Il pace nel basket femminile italiano"
 
 intro: |
-  Ho scaricato i tabellini di tutte le 110 partite della regular season di Serie A1 2025/26
-  da <a href="https://www.legabasketfemminile.it">legabasketfemminile.it</a> e calcolato il
-  <strong>pace</strong> (possessi stimati ogni 40 minuti) di ogni squadra partita per partita,
-  con la formula avanzata di Dean&nbsp;Oliver descritta su
-  <a href="https://hackastat.eu/learn-a-stat-possessi-e-pace/">hackastat.eu</a>.
+  Quanto corrono le squadre di Serie A1? Ho raccolto i tabellini di tutte le 110 partite
+  della regular season 2025/26 da
+  <a href="https://www.legabasketfemminile.it">legabasketfemminile.it</a> e calcolato il
+  <strong>pace</strong> — i possessi giocati ogni 40 minuti — di ogni partita, con la
+  formula di Dean&nbsp;Oliver
+  (<a href="https://hackastat.eu/learn-a-stat-possessi-e-pace/">hackastat.eu</a>).
 
 sections:
   - chip: "01 — CLASSIFICA RITMO"
-    heading: "Pace medio per squadra"
+    heading: "Chi corre e chi no"
     caption: |
-      Chi corre più delle altre in tutta la Serie A1. Roseto gioca il basket più
-      veloce, Broni e San Giovanni il più lento — quasi 6 possessi a partita di differenza.
+      Quasi sei possessi a partita separano la squadra più veloce dalla più lenta:
+      Roseto corre, San Giovanni preferisce giocare a metà campo. Le due finaliste
+      sono agli opposti: Venezia tra le più veloci, Schio nella metà lenta.
     layout: single
     image: bar
     alt: "Pace medio per squadra"
 
   - chip: "02 — CASO DI STUDIO: LE DUE FINALISTE"
-    heading: "Il ritmo di Schio e Venezia, partita per partita"
+    heading: "Schio e Venezia, partita per partita"
     caption: |
-      Le due squadre arrivate in finale. Schio (20-0 in regular season) oscilla molto, da 65 a
-      quasi 80; Venezia è leggermente più veloce in media e altrettanto incostante.
+      Schio ha chiuso la regular season 20-0 giocando quasi sempre sotto la media del
+      campionato. Venezia vive sopra. Ma nessuna delle due ha un ritmo fisso: da una
+      serata all'altra si passa da 65 a quasi 80 possessi.
     layout: pair
     pair:
       - label: "Schio"
@@ -36,14 +39,12 @@ sections:
         alt: "Pace per partita di Venezia nel corso della stagione"
 
   - chip: "03 — CASO DI STUDIO: LE DUE FINALISTE"
-    heading: "Chi si scosta dal proprio ritmo abituale"
+    heading: "Chi impone il ritmo"
     caption: |
-      Ogni punto è una partita: sulla x quanto la squadra si è scostata dal proprio pace medio
-      stagionale, sulla y quanto l'avversaria si è scostata dal proprio. Origine (0,0) =
-      entrambe al ritmo abituale. Schio rallenta le partite e le porta sul proprio ritmo: anche
-      nelle gare sotto la propria media, l'avversaria scende ancora di più sotto la sua. Venezia
-      fa l'opposto: accelera le partite sul proprio ritmo. Le sue sconfitte principali sono
-      arrivate proprio quando il ritmo è calato sotto la sua media.
+      Ogni punto è una partita, letta rispetto al ritmo abituale delle due squadre in
+      campo. Schio le partite le rallenta e le porta sul suo passo: anche quando corre
+      meno del solito, l'avversaria corre ancora meno. Venezia fa l'opposto, le
+      accelera e ha perso quasi solo nelle serate in cui il ritmo è sceso.
     layout: pair
     pair:
       - label: "Schio"
@@ -54,12 +55,11 @@ sections:
         alt: "Scostamento dal pace medio, Venezia vs avversaria"
 
   - chip: "04 — COM'È FINITA"
-    heading: "Il pace nella finale scudetto"
+    heading: "La finale si è giocata sul passo di Schio"
     caption: |
-      Venezia elimina Schio (unica sconfitta stagionale) in Gara 1, sul ritmo più lento delle tre
-      partite — sotto la media stagionale di entrambe. Schio chiude la serie 2-1 vincendo Gara 2 e
-      Gara 3 su un pace vicino al proprio standard, ma sempre più lento di quello abituale di
-      Venezia: la finale si è giocata su ritmi imposti da Schio, non da Venezia.
+      Tutte e tre le gare della serie sono andate in scena sotto il ritmo medio di stagione. 
+      Venezia ha vinto Gara 1 ma poi Schio ha chiuso 2-1 giocando sul proprio passo.
+      Chi ha imposto il ritmo ha vinto lo scudetto.
     layout: single
     image: finali
     alt: "Pace nelle 3 partite della finale Schio-Venezia"
