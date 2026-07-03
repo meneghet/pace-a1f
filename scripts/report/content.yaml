@@ -1,7 +1,7 @@
 # Testo del report_cv.html. Modifica solo questo file per cambiare parole/numeri:
 # la struttura/stile della pagina vive in build_cv_report.py e non va toccata qui.
 
-eyebrow: "Progetto personale — analisi dati sportivi"
+eyebrow: "Lorenzo Meneghetti — Basket Analytics"
 title: "Il pace nel basket femminile italiano"
 
 intro: |
@@ -66,4 +66,4 @@ sections:
 
 footer:
   - "Fonte dati: legabasketfemminile.it, Serie A1 femminile 2025/26 (regular season). Formula del pace: hackastat.eu."
-  - "Scraping, calcolo e visualizzazioni realizzati con Python (requests, BeautifulSoup, pandas, matplotlib/seaborn)."
+  - "Scraping, calcolo e visualizzazioni realizzati in Python."

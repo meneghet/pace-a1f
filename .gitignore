@@ -3,3 +3,8 @@ __pycache__/
 *.pyc
 .claude/
 scripts/explore/_*
+
+# CV personale, non fa parte del progetto pace (script generico html_to_pdf.py resta tracciato)
+cv/main.md
+cv/cv_lorenzo_meneghetti.html
+cv/cv_lorenzo_meneghetti.pdf

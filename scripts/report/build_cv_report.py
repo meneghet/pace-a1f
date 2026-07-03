@@ -145,11 +145,16 @@ CSS = """
   }
   footer p { margin: 0 0 6px; }
 
-  figure, .pair > div { break-inside: avoid; page-break-inside: avoid; }
+  .section-head { break-inside: avoid; page-break-inside: avoid; break-after: avoid; page-break-after: avoid; }
+  section, figure, .pair, .pair > div { break-inside: avoid; page-break-inside: avoid; }
   h2, .chip { break-after: avoid; page-break-after: avoid; }
 
   @media print {
-    .page { padding: 0; max-width: none; }
+    body { margin: 0; }
+    .page { padding: 40px 32px; max-width: none; }
+    .pair.cols-2 { grid-template-columns: 1fr 1fr; gap: 16px; }
+    section { break-inside: avoid; page-break-inside: avoid; }
+    section + section { break-before: page; page-break-before: always; }
   }
 """
 
@@ -198,17 +203,20 @@ def render_section(section, imgs):
         <p class="team-label">{item['label']}</p>
         {render_figure(item['image'], item.get('alt', ''), imgs)}
       </div>""" for item in section["pair"])
-        body = f'<div class="pair stacked">\n{columns}\n    </div>'
+        cols_class = "cols-2" if section.get("pair_columns") == 2 else "stacked"
+        body = f'<div class="pair {cols_class}">\n{columns}\n    </div>'
     else:
         raise ValueError(f"unknown layout: {layout!r} in section {section.get('chip')!r}")
 
     return f"""
   <section>
-    <p class="chip">{section['chip']}</p>
-    <h2>{section['heading']}</h2>
-    <p class="caption">
-      {section['caption'].strip()}
-    </p>
+    <div class="section-head">
+      <p class="chip">{section['chip']}</p>
+      <h2>{section['heading']}</h2>
+      <p class="caption">
+        {section['caption'].strip()}
+      </p>
+    </div>
     {body}
   </section>
 """
