@@ -18,12 +18,13 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 from plot_pace import slugify, team_alias
+from chart_theme import apply_theme, style_axes, INK, MUTED, RESULT_PALETTE
 
 # Fixed, shared across all teams: computed from the global min/max deviation
 # (-9.2 / +9.2 across the whole dataset), plus a bit of padding.
 DEV_RANGE = (-10, 10)
 
-WIN_LOSS_PALETTE = {"W": "green", "L": "red"}
+WIN_LOSS_PALETTE = RESULT_PALETTE
 
 FINALISTS = ["Famila Wuber Schio", "Umana Reyer Venezia"]
 
@@ -37,35 +38,37 @@ def plot_team_pace_deviation(df_team: pd.DataFrame, out_path: str, team_label: s
     df_team["team_dev"] = df_team["game_pace"] - team_avg
     df_team["opp_dev"] = df_team["game_pace"] - df_team["opponent"].map(team_avg_lookup)
 
-    sns.set_theme(style="whitegrid", font_scale=1.25)
+    apply_theme()
     fig, ax = plt.subplots(figsize=(6.5, 6.5))
 
     lo, hi = DEV_RANGE
 
-    ax.axhline(0, color="black", linestyle=":", linewidth=1, alpha=0.5)
-    ax.axvline(0, color="black", linestyle=":", linewidth=1, alpha=0.5)
+    ax.axhline(0, color=INK, linestyle=":", linewidth=1, alpha=0.4, zorder=1)
+    ax.axvline(0, color=INK, linestyle=":", linewidth=1, alpha=0.4, zorder=1)
 
     edge_pad = (hi - lo) * 0.03
-    ax.text(0, hi - edge_pad, "Loro corrono\ndi più", color="#1f4ea1", alpha=0.45,
-             fontsize=14, ha="center", va="top", zorder=1)
-    ax.text(0, lo + edge_pad, "Loro corrono\ndi meno", color="#1f4ea1", alpha=0.45,
-             fontsize=14, ha="center", va="bottom", zorder=1)
-    ax.text(lo + edge_pad, 0, "Noi corriamo\ndi meno", color="#1f4ea1", alpha=0.45,
-             fontsize=14, ha="left", va="center", ma="center", zorder=1)
-    ax.text(hi - edge_pad, 0, "Noi corriamo\ndi più", color="#1f4ea1", alpha=0.45,
-             fontsize=14, ha="right", va="center", ma="center", zorder=1)
+    ax.text(0, hi - edge_pad, "Loro corrono\ndi più", color=MUTED, alpha=0.8,
+             fontsize=13, ha="center", va="top", zorder=1)
+    ax.text(0, lo + edge_pad, "Loro corrono\ndi meno", color=MUTED, alpha=0.8,
+             fontsize=13, ha="center", va="bottom", zorder=1)
+    ax.text(lo + edge_pad, 0, "Noi corriamo\ndi meno", color=MUTED, alpha=0.8,
+             fontsize=13, ha="left", va="center", ma="center", zorder=1)
+    ax.text(hi - edge_pad, 0, "Noi corriamo\ndi più", color=MUTED, alpha=0.8,
+             fontsize=13, ha="right", va="center", ma="center", zorder=1)
 
     sns.scatterplot(data=df_team, x="team_dev", y="opp_dev", hue="result",
-                     hue_order=["W", "L"], palette=WIN_LOSS_PALETTE, s=90, ax=ax, zorder=3)
+                     hue_order=["W", "L"], palette=WIN_LOSS_PALETTE, s=90, ax=ax,
+                     zorder=3, edgecolor="none")
 
     for _, row in df_team[df_team["opponent"].isin(FINALISTS)].iterrows():
         ax.annotate(team_alias(row["opponent"]), (row["team_dev"], row["opp_dev"]),
                     xytext=(2, 2), textcoords="offset points", fontsize=9,
-                    color="black", ha="left", va="bottom", zorder=4)
+                    color=INK, ha="left", va="bottom", zorder=4)
 
     ax.set_xlim(lo, hi)
     ax.set_ylim(lo, hi)
     ax.set_aspect("equal")
+    style_axes(ax, grid_axis="both")
     tick_fmt = lambda v, _: "0" if v == 0 else f"{v:+.1f}"
     ax.xaxis.set_major_formatter(tick_fmt)
     ax.yaxis.set_major_formatter(tick_fmt)

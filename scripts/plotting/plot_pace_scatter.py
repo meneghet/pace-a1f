@@ -15,27 +15,28 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 from plot_pace import PALETTE, slugify, team_alias
-
+from chart_theme import apply_theme, style_axes, INK, HAIRLINE
 
 def plot_team_pace_scatter(df_team: pd.DataFrame, out_path: str, team_label: str):
     alias = team_alias(team_label)
-    sns.set_theme(style="whitegrid", font_scale=1.25)
+    apply_theme()
     fig, ax = plt.subplots(figsize=(6.5, 6.5))
 
     lo = df_team["game_pace"].min() - 2
     hi = df_team["game_pace"].max() + 2
-    ax.plot([lo, hi], [lo, hi], color="grey", linestyle="--", linewidth=1, alpha=0.6)
+    ax.plot([lo, hi], [lo, hi], color=HAIRLINE, linestyle="--", linewidth=1.3, zorder=1)
 
     mean_pace = df_team["game_pace"].mean()
-    ax.axvline(mean_pace, color="black", linestyle=":", linewidth=1.2, alpha=0.7,
-               label=f"pace medio {alias}: {mean_pace:.1f}")
+    ax.axvline(mean_pace, color=INK, linestyle=":", linewidth=1.2, alpha=0.7,
+               label=f"pace medio {alias}: {mean_pace:.1f}", zorder=2)
 
     sns.scatterplot(data=df_team, x="game_pace", y="game_pace", hue="result",
-                     palette=PALETTE, s=90, ax=ax)
+                     palette=PALETTE, s=90, ax=ax, zorder=3, edgecolor="none")
 
     ax.set_xlim(lo, hi)
     ax.set_ylim(lo, hi)
     ax.set_aspect("equal")
+    style_axes(ax, grid_axis="both")
     ax.set_title(f"Pace squadra vs pace avversaria — {alias}\n(regular season)")
     ax.set_xlabel(f"Pace {alias}")
     ax.set_ylabel("Pace avversaria")

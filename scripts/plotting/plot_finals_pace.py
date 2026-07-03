@@ -10,19 +10,20 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 from plot_pace import team_alias
+from chart_theme import apply_theme, style_axes, ACCENT, ACCENT2, PAPER
 
 SCHIO = "Famila Wuber Schio"
 VENEZIA = "Umana Reyer Venezia"
 
 
 def plot(finals: pd.DataFrame, season_avg: dict, out_path: str):
-    sns.set_theme(style="whitegrid", font_scale=1.25)
+    apply_theme()
     fig, ax = plt.subplots(figsize=(8, 5.5))
 
     ylo, yhi = 55, 78
 
     labels = [f"Gara {g}" for g in finals["gara"]]
-    bars = ax.bar(labels, finals["game_pace"] - ylo, bottom=ylo, color="#264653",
+    bars = ax.bar(labels, finals["game_pace"] - ylo, bottom=ylo, color=ACCENT2,
                   width=0.5, zorder=3)
 
     for bar, (_, row) in zip(bars, finals.iterrows()):
@@ -32,14 +33,15 @@ def plot(finals: pd.DataFrame, season_avg: dict, out_path: str):
         winner_alias = team_alias(row["winner"])
         ax.text(bar.get_x() + bar.get_width() / 2, ylo + 0.4,
                 f"{score}\n{winner_alias} vince", ha="center", va="bottom",
-                fontsize=9, color="white", zorder=4)
+                fontsize=9, color=PAPER, zorder=4)
 
-    ax.axhline(season_avg[SCHIO], color="#e76f51", linestyle="--", linewidth=1.3,
+    ax.axhline(season_avg[SCHIO], color=ACCENT, linestyle="--", linewidth=1.5,
                label=f"media stagionale Schio: {season_avg[SCHIO]:.1f}", zorder=2)
-    ax.axhline(season_avg[VENEZIA], color="#2a9d8f", linestyle="--", linewidth=1.3,
+    ax.axhline(season_avg[VENEZIA], color=ACCENT2, linestyle=":", linewidth=1.8,
                label=f"media stagionale Venezia: {season_avg[VENEZIA]:.1f}", zorder=2)
 
     ax.set_ylim(ylo, yhi)
+    style_axes(ax, grid_axis="y")
     ax.set_title("Pace nella finale scudetto — Famila Wuber Schio vs Umana Reyer Venezia")
     ax.set_ylabel("Pace di partita (possessi stimati / 40')")
     ax.legend(loc="upper right")

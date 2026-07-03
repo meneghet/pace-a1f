@@ -10,6 +10,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 from plot_pace import team_alias
+from chart_theme import apply_theme, style_axes, ACCENT, INK
 
 
 def build_team_summary(df: pd.DataFrame) -> pd.DataFrame:
@@ -23,17 +24,18 @@ def build_team_summary(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def plot(summary: pd.DataFrame, out_path: str):
-    sns.set_theme(style="whitegrid", font_scale=1.25)
+    apply_theme()
     fig, ax = plt.subplots(figsize=(9, 7))
-    sns.scatterplot(data=summary, x="avg_pace", y="win_rate", s=110,
-                     color="#264653", ax=ax, zorder=3)
+    sns.scatterplot(data=summary, x="avg_pace", y="win_rate", s=120,
+                     color=ACCENT, ax=ax, zorder=3, edgecolor="none")
 
     for _, row in summary.iterrows():
         ax.annotate(team_alias(row["team"]), (row["avg_pace"], row["win_rate"]),
-                    xytext=(6, 6), textcoords="offset points", fontsize=9,
-                    ha="left", va="bottom")
+                    xytext=(6, 6), textcoords="offset points", fontsize=10,
+                    color=INK, ha="left", va="bottom")
 
     ax.set_ylim(-0.05, 1.05)
+    style_axes(ax, grid_axis="both")
     ax.set_title("Pace medio vs win rate — Serie A1 2025/26 (regular season)")
     ax.set_xlabel("Pace medio stagionale (possessi stimati / 40')")
     ax.set_ylabel("Win rate")

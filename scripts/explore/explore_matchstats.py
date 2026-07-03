@@ -14,10 +14,10 @@ with sync_playwright() as p:
     text = page.inner_text("body")
     browser.close()
 
-with open("scripts/_matchstats_sample.html", "w", encoding="utf-8") as f:
+with open("scripts/explore/_matchstats_sample.html", "w", encoding="utf-8") as f:
     f.write(html)
 
-with open("scripts/_matchstats_sample.txt", "w", encoding="utf-8") as f:
+with open("scripts/explore/_matchstats_sample.txt", "w", encoding="utf-8") as f:
     f.write(text)
 
 print("done, saved html + text")

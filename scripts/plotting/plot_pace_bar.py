@@ -10,6 +10,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 from plot_pace import team_alias
+from chart_theme import apply_theme, style_axes, ACCENT
 
 
 def build_team_avg_pace(df: pd.DataFrame) -> pd.DataFrame:
@@ -19,17 +20,18 @@ def build_team_avg_pace(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def plot(summary: pd.DataFrame, out_path: str):
-    sns.set_theme(style="whitegrid", font_scale=1.25)
+    apply_theme()
     fig, ax = plt.subplots(figsize=(8, 6))
 
     order = summary.iloc[::-1]  # highest pace at the top of a barh chart
-    bars = ax.barh(order["alias"], order["avg_pace"], color="#264653")
+    bars = ax.barh(order["alias"], order["avg_pace"], color=ACCENT, zorder=3)
 
     for bar, value in zip(bars, order["avg_pace"]):
         ax.text(bar.get_width() + 0.3, bar.get_y() + bar.get_height() / 2,
                 f"{value:.1f}", va="center", ha="left", fontsize=10)
 
     ax.set_xlim(60, 80)
+    style_axes(ax, grid_axis="x")
     ax.set_title("Pace medio per squadra — Serie A1 2025/26 (regular season)")
     ax.set_xlabel("Pace medio stagionale (possessi stimati / 40')")
     ax.set_ylabel("")

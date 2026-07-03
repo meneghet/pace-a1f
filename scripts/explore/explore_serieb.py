@@ -15,7 +15,7 @@ resp.raise_for_status()
 html = resp.text
 print(f"list page length: {len(html)}")
 
-with open("scripts/_serieb_list.html", "w", encoding="utf-8") as f:
+with open("scripts/explore/_serieb_list.html", "w", encoding="utf-8") as f:
     f.write(html)
 
 soup = BeautifulSoup(html, "html.parser")

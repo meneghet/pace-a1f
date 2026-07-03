@@ -2,7 +2,7 @@
 
 ## Formula usata
 
-Fonte: [hackastat.eu — Possessi e Pace](https://hackastat.eu/learn-a-stat-possessi-e-pace/) (Dean Oliver). Inizialmente usata la versione semplice, poi passati alla versione **avanzata** (in `scripts/pace.py`, `team_possessions_advanced`) non appena verificato che i dati necessari erano disponibili nel tabellino:
+Fonte: [hackastat.eu — Possessi e Pace](https://hackastat.eu/learn-a-stat-possessi-e-pace/) (Dean Oliver). Inizialmente usata la versione semplice, poi passati alla versione **avanzata** (in `scripts/scraping/pace.py`, `team_possessions_advanced`) non appena verificato che i dati necessari erano disponibili nel tabellino:
 
 ```
 Possessi_squadra ≈ FGA + 0.44 × FTA − 1.07 × (OR / (OR + oppDR)) × (FGA − FGM) + TOV
@@ -27,7 +27,7 @@ ed è lo stesso identico numero per entrambe le squadre che hanno giocato quell'
 - La stagione 2025/26 di Serie A1 (competizione ID 313) ha **110 partite** (11 squadre, doppio girone) — coerente con l'elenco squadre del sito.
 - **Nessun ostacolo tecnico**: niente postback ASP.NET da gestire per queste pagine, niente rate limit nel `robots.txt` (assente/404).
 
-Proof of concept eseguito: script `scripts/lbf_scraper.py`, ha scaricato tutte le partite di una squadra (Alama San Martino di Lupari) per la stagione 2025/26, calcolato pace e W/L partita per partita, salvato in `data/pace_Alama_A1_2025-26.csv` (vedi tabella/grafico sotto).
+Proof of concept eseguito: script `scripts/scraping/lbf_scraper.py`, ha scaricato tutte le partite di una squadra (Alama San Martino di Lupari) per la stagione 2025/26, calcolato pace e W/L partita per partita, salvato in `data/pace_Alama_A1_2025-26.csv` (vedi tabella/grafico sotto).
 
 ## Serie B femminile — ❌ dati insufficienti per il pace, ok solo per W/L
 
@@ -45,7 +45,7 @@ Testato su **due piattaforme diverse** (come richiesto), entrambe con robots.txt
 
 ## Dataset completo — tutte le 11 squadre di Serie A1 2025/26
 
-Lo scraper (`scripts/lbf_scraper.py::build_full_season_dataset`) scarica **ogni partita della regular season una sola volta** (110 partite, 110 richieste totali invece di 1100 se fatto per squadra) e produce due righe per partita — una per prospettiva squadra — condividendo lo stesso `game_pace` (media delle due stime) su entrambe.
+Lo scraper (`scripts/scraping/lbf_scraper.py::build_full_season_dataset`) scarica **ogni partita della regular season una sola volta** (110 partite, 110 richieste totali invece di 1100 se fatto per squadra) e produce due righe per partita — una per prospettiva squadra — condividendo lo stesso `game_pace` (media delle due stime) su entrambe.
 
 - `data/pace_A1_2025-26_all_teams.csv` — dataset master: 220 righe (110 partite × 2 squadre), colonne `match_id, date, giornata, team, opponent, is_home, team_score, opp_score, result, n_periods`, i box score grezzi (`team_fga, team_fgm, team_fta, team_oreb, team_dreb, team_tov` e le stesse per `opp_*`) e i pace derivati: `team_pace`/`opp_pace` (stime grezze non mediate, per squadra) e **`game_pace`** (la media delle due — è questa la metrica usata in tutti i grafici e le aggregazioni). Aver salvato anche i campi grezzi evita di dover ri-scrapare se in futuro si vuole ritoccare ancora la formula.
 - Verifica di correttezza: incrociando le righe casa/ospite della stessa partita, `team_pace` di una squadra coincide esattamente con `opp_pace` dell'altra in tutte le 110 partite (0 mismatch) — conferma che la formula avanzata è applicata in modo simmetrico prima di essere mediata in `game_pace`.
@@ -57,6 +57,7 @@ I grafici sono organizzati in sottocartelle dentro `data/`:
 - `data/summary/pace_vs_winrate.png` — scatter a livello di squadra: pace medio stagionale (x, media di `game_pace` sulle partite della squadra) vs win rate (y), un punto per squadra con etichetta. Non emerge una relazione lineare forte tra pace e vittorie: Schio vince tutto con un pace medio-basso (71.0), mentre People Strategy Roseto (75.0) e RMB Brixia (74.4) hanno pace alto ma win rate basso (40% e 15%).
 - `data/summary/pace_bar.png` — bar chart orizzontale, una barra per squadra, ordinato per pace medio decrescente con il valore annotato: da Roseto (75.0) a Geas Sesto San Giovanni (69.1). Asse x fisso 60-80.
 - `data/pace_deviation/pace_deviation_<Squadra>.png` × 11 — scatter "centrato sulle medie": x = `game_pace` della partita meno il **proprio** pace medio stagionale, y = lo stesso `game_pace` (identico, è la stessa partita) meno **il pace medio stagionale dell'avversaria**. Origine (0,0) = entrambe al proprio ritmo abituale; x e y differiscono solo perché le due baseline (media propria vs media avversaria) sono diverse, non perché la partita abbia due pace distinti. Bordi annotati con lettura discorsiva ("Le facciamo correre" / "Le rallentiamo" / "Ci rallentano" / "Ci fanno correre"), punti verdi/rossi per W/L, e le partite contro le due finaliste (Schio/Venezia) etichettate esplicitamente. Range assi condiviso (-10/+10).
+  - **Lettura Schio vs Venezia**: nel grafico di Schio, quasi tutti i punti stanno sotto la diagonale (y < x) — le avversarie scendono sotto la propria media più di quanto scenda Schio sotto la sua: Schio rallenta le partite e le porta sul proprio ritmo, anche quando gioca sotto il proprio standard (le due partite contro Venezia etichettate, a y = -3.7 e -7.0, ne sono l'esempio più netto). Nel grafico di Venezia i punti seguono da vicino la diagonale con pendenza positiva — Venezia accelera le partite portandole sul proprio ritmo — e le sue uniche due sconfitte in stagione (entrambe contro Schio) sono anche i due punti con x più negativo: le sconfitte principali sono arrivate proprio quando il ritmo è sceso sotto la sua media.
 
 **Nota su una metrica scartata**: una prima versione includeva anche `data/summary/oppdev_vs_winrate.png` (quanto in media le avversarie si scostano dal proprio pace abituale contro una data squadra, vs win rate). È stata rimossa perché, una volta che il pace è un valore unico condiviso per partita (`game_pace`), a livello di riepilogo stagionale questa metrica è una funzione affine esatta del pace medio della squadra stessa — corr = 1.0 su tutte le 11 squadre, dato un calendario a girone doppio perfettamente bilanciato (ogni squadra incontra ciascuna delle altre 10 esattamente due volte). In formula: `opp_dev(A) = 1.1 × pace_medio(A) − S/10`, dove S è la somma dei pace medi di tutte le squadre. Il grafico risultava quindi indistinguibile da `pace_vs_winrate.png`, solo con asse x riscalato. Lo scostamento **per singola partita** (nei grafici `pace_deviation`) resta invece informativo, perché lì non è mediato sulla stagione.
 - `data/archive/` — output della prima proof of concept a squadra singola (Alama), superata dal dataset completo.
@@ -72,10 +73,10 @@ I valori sono in un range plausibile per il basket europeo femminile (tipicament
 
 ## Addendum — la finale scudetto (playoff, fuori dal dataset master)
 
-Le 3 partite della finale (Famila Wuber Schio vs Umana Reyer Venezia, le due finaliste già usate come caso di studio) **non fanno parte** di `pace_A1_2025-26_all_teams.csv`, che copre solo la regular season. Il tabellone playoff di `legabasketfemminile.it` non ha una querystring statica come il calendario di regular season: sta dietro un postback ASP.NET (tab "Play Off" su `Calendar.aspx`), individuato una tantum con Playwright (`scripts/explore_playoff.py`) per recuperare i `MID` delle partite.
+Le 3 partite della finale (Famila Wuber Schio vs Umana Reyer Venezia, le due finaliste già usate come caso di studio) **non fanno parte** di `pace_A1_2025-26_all_teams.csv`, che copre solo la regular season. Il tabellone playoff di `legabasketfemminile.it` non ha una querystring statica come il calendario di regular season: sta dietro un postback ASP.NET (tab "Play Off" su `Calendar.aspx`), individuato una tantum con Playwright (`scripts/explore/explore_playoff.py`) per recuperare i `MID` delle partite.
 
-- `scripts/finals_pace.py` — scarica i 3 tabellini (MID hardcoded, individuati una volta sola) e calcola `game_pace` con la stessa formula della pipeline principale, salva in `data/finals/finals_pace.csv`.
-- `scripts/plot_finals_pace.py` → `data/finals/pace_finali.png` — bar chart delle 3 partite con le medie stagionali di Schio (71.0) e Venezia (74.2) come riferimento.
+- `scripts/scraping/finals_pace.py` — scarica i 3 tabellini (MID hardcoded, individuati una volta sola) e calcola `game_pace` con la stessa formula della pipeline principale, salva in `data/finals/finals_pace.csv`.
+- `scripts/plotting/plot_finals_pace.py` → `data/finals/pace_finali.png` — bar chart delle 3 partite con le medie stagionali di Schio (71.0) e Venezia (74.2) come riferimento.
 
 | Gara | Data | Risultato | Vince | Pace |
 |---|---|---|---|---|

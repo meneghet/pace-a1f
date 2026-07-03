@@ -12,6 +12,7 @@ import seaborn as sns
 
 from plot_pace import PALETTE, team_alias, Y_RANGE
 from plot_pace_deviation import DEV_RANGE
+from chart_theme import apply_theme, style_axes, INK, MUTED, ACCENT
 
 OUT_DIR = "data/cv_report"
 TEAMS = ["Famila Wuber Schio", "Umana Reyer Venezia"]
@@ -21,18 +22,19 @@ def clean_pace_over_time(df_team, team, out_path, league_avg_pace):
     df_team = df_team.sort_values("giornata").reset_index(drop=True)
     alias = team_alias(team)
 
-    sns.set_theme(style="whitegrid", font_scale=1.25)
+    apply_theme()
     fig, ax = plt.subplots(figsize=(9, 4.2))
     sns.scatterplot(data=df_team, x="giornata", y="game_pace", hue="result",
-                     palette=PALETTE, s=80, ax=ax)
-    sns.lineplot(data=df_team, x="giornata", y="game_pace", color="grey", alpha=0.4,
-                 ax=ax, legend=False)
+                     palette=PALETTE, s=80, ax=ax, zorder=3, edgecolor="none")
+    sns.lineplot(data=df_team, x="giornata", y="game_pace", color=MUTED, alpha=0.35,
+                 ax=ax, legend=False, zorder=2)
     mean_pace = df_team["game_pace"].mean()
-    ax.axhline(mean_pace, color="black", linestyle="--", linewidth=1, alpha=0.6,
+    ax.axhline(mean_pace, color=INK, linestyle="--", linewidth=1, alpha=0.7,
                label=f"media {alias}: {mean_pace:.1f}")
-    ax.axhline(league_avg_pace, color="#6a4c93", linestyle=":", linewidth=1.3, alpha=0.8,
+    ax.axhline(league_avg_pace, color=ACCENT, linestyle=":", linewidth=1.5, alpha=0.9,
                label=f"media campionato: {league_avg_pace:.1f}")
     ax.set_ylim(*Y_RANGE)
+    style_axes(ax, grid_axis="y")
     ax.set_title(f"Pace per partita — {alias}")
     ax.set_xlabel("Giornata")
     ax.set_ylabel("Pace di partita")

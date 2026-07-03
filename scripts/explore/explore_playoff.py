@@ -19,7 +19,7 @@ with sync_playwright() as p:
     html = page.content()
     browser.close()
 
-with open("scripts/_calendar_313_playoff.html", "w", encoding="utf-8") as f:
+with open("scripts/explore/_calendar_313_playoff.html", "w", encoding="utf-8") as f:
     f.write(html)
 
 print("New requests after clicking Play Off tab:")
