@@ -238,7 +238,7 @@ def main():
         footer=footer_html,
     )
 
-    out_path = f"{OUT_DIR}/report_cv.html"
+    out_path = f"{OUT_DIR}/report.html"
     with open(out_path, "w", encoding="utf-8") as f:
         f.write(html)
     print(f"Wrote {out_path} ({len(html)} chars)")

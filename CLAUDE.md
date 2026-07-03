@@ -7,7 +7,7 @@ femminile 2025/26, da legabasketfemminile.it. Formula da hackastat.eu.
 
 - `scripts/scraping/` — scraping e formule del pace.
 - `scripts/plotting/` — tutti i grafici (leggono il CSV master, scrivono in `data/`).
-- `scripts/report/` — assemblaggio di `report_cv.html`.
+- `scripts/report/` — assemblaggio di `report.html`.
 - `scripts/explore/` — script di ricognizione one-off, non parte della pipeline.
 
 Gli script dentro una stessa cartella si importano a vicenda (es. tutti i
@@ -27,7 +27,7 @@ spostati singolarmente.
 2. `scripts/scraping/pace.py` — formule (`team_possessions_advanced`, `game_minutes`).
 3. Script di plotting (`scripts/plotting/`), tutti leggono il CSV master e
    scrivono in `data/`; stile condiviso in `chart_theme.py` (palette
-   verde/rosso W-L validata, colori coerenti con `report_cv.html`):
+   verde/rosso W-L validata, colori coerenti con `report.html`):
    - `plot_pace.py` → `data/pace_per_team/` (pace per giornata, per squadra)
    - `plot_pace_scatter.py --all` → `data/pace_vs_opponent/` (pace propria vs avversaria)
    - `plot_pace_deviation.py --all` → `data/pace_deviation/` (scostamento da media propria/avversaria)
@@ -50,8 +50,9 @@ Playwright (`scripts/explore/explore_playoff.py`, tab "Play Off" su
 
 - `report.md` — report tecnico completo (fonti valutate, formula, findings su
   Serie B femminile — dati insufficienti per il pace, solo per la A1/A2 funziona).
-- `report_cv.html` — versione minimale (1 pagina, letta in 30s) da allegare a un
-  CV, con caso di studio Schio+Venezia. Generato da
+- `report.html` — versione minimale (1 pagina, letta in 30s) da allegare a un
+  CV, con caso di studio Schio+Venezia, e pubblicata anche su GitHub Pages
+  (`index.html` in root fa redirect a `report.html`). Generato da
   `scripts/report/build_cv_report.py` a partire da grafici "puliti" (senza
   linee di media) in `data/cv_report/`, costruiti da
   `scripts/plotting/make_cv_charts.py`. Non tocca la pipeline principale.
@@ -59,7 +60,7 @@ Playwright (`scripts/explore/explore_playoff.py`, tab "Play Off" su
   `scripts/report/content.yaml`, non nel `.py`** — per cambiare le parole
   basta editare quel file e rilanciare `build_cv_report.py`; il `.py` è solo
   struttura/CSS.
-- `report_cv.pdf` — export PDF di `report_cv.html` via
+- `report_cv.pdf` — export PDF di `report.html` via
   `cv/html_to_pdf.py <input.html> <output.pdf>` (headless Chromium/Playwright).
   Da rigenerare a mano dopo ogni modifica al report.
 
@@ -78,4 +79,4 @@ Playwright (`scripts/explore/explore_playoff.py`, tab "Play Off" su
 - `cv/` — CV personale (separato dal progetto pace): `cv/main.md` è la fonte
   originale, `cv/cv_lorenzo_meneghetti.html`/`.pdf` è la versione minimale
   orientata a un pubblico sportivo. `cv/html_to_pdf.py` è generico, riusabile
-  anche per `report_cv.html`.
+  anche per `report.html`.

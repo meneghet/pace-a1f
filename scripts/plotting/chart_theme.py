@@ -1,4 +1,4 @@
-"""Shared visual theme for all pace charts, matching report_cv.html's design
+"""Shared visual theme for all pace charts, matching report.html's design
 tokens (paper/ink/muted/accent/hairline) instead of seaborn's default
 whitegrid look. Colors chosen and validated with the dataviz skill's
 validate_palette.js against the paper surface (contrast, chroma floor, CVD
